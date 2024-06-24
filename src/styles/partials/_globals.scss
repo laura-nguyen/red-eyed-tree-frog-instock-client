@@ -1,0 +1,9 @@
+@use "../partials/typography" as *;
+@use "../partials/variables" as *;
+@use "../partials/mixins" as *;
+
+* {
+  font-family: $font-family;
+  font-weight: 400;
+  font-style: normal;
+}
