@@ -1,0 +1,15 @@
+.search {
+  padding: 16px;
+
+  &__control {
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+  }
+}
