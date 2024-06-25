@@ -8,7 +8,6 @@ export default function Warehouses () {
   const getWarehouseListEndPoint = `${API_URL}api/warehouses`;
 
   const getwarehouseList = async () => {
-    console.log("came here", getWarehouseListEndPoint);
     try{
       const result= await axios.get(getWarehouseListEndPoint);
       const warehouseList = result.data;
