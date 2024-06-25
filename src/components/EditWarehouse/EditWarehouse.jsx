@@ -2,6 +2,8 @@ import "./EditWarehouse.scss";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import backArrow from "../../assets/icons/arrow_back-24px.svg";
+import error from "../../assets/icons/error-24px.svg";
 
 const EditWarehouse = () => {
   const { warehouseId } = useParams();
@@ -60,7 +62,6 @@ const EditWarehouse = () => {
 
   const validateContactPhone = (contactPhone) => {
     const re = /^(\+?\d{1,2}\s?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/;
-    ;
     return re.test(String(contactPhone));
   };
 
@@ -100,7 +101,11 @@ const EditWarehouse = () => {
     <main className="edit-wh">
       <div className="edit-wh__header">
         <Link className="edit-wh__back-link" to={"/warehouses"}>
-          <img className="edit-wh__back-icon" src="" alt="" />
+          <img
+            className="edit-wh__back-icon"
+            src={backArrow}
+            alt="back arrow"
+          />
         </Link>
         <h1 className="edit-wh__title">Edit Warehouse</h1>
       </div>
@@ -121,7 +126,12 @@ const EditWarehouse = () => {
               value={formData.warehouse_name}
               onChange={handleInputChange}
             />
-                        {errors.warehouse_name && <p className="form__error"><img className="form__error--icon" src="" alt="" /> {errors.warehouse_name}</p>}
+            {errors.warehouse_name && (
+              <p className="form__error">
+                <img className="form__error--icon" src={error} alt="" />{" "}
+                {errors.warehouse_name}
+              </p>
+            )}
 
             <h3 className="form__label">Street Address</h3>
             <input
@@ -135,7 +145,12 @@ const EditWarehouse = () => {
               value={formData.address}
               onChange={handleInputChange}
             />
-                        {errors.address && <p className="form__error"><img className="form__error--icon" src="" alt="" /> {errors.address}</p>}
+            {errors.address && (
+              <p className="form__error">
+                <img className="form__error--icon" src={error} alt="" />{" "}
+                {errors.address}
+              </p>
+            )}
 
             <h3 className="form__label">City</h3>
             <input
@@ -149,7 +164,12 @@ const EditWarehouse = () => {
               value={formData.city}
               onChange={handleInputChange}
             />
-                        {errors.city && <p className="form__error"><img className="form__error--icon" src="" alt="" /> {errors.city}</p>}
+            {errors.city && (
+              <p className="form__error">
+                <img className="form__error--icon" src={error} alt="" />{" "}
+                {errors.city}
+              </p>
+            )}
 
             <h3 className="form__label">Country</h3>
             <input
@@ -163,8 +183,12 @@ const EditWarehouse = () => {
               value={formData.country}
               onChange={handleInputChange}
             />
-                        {errors.country && <p className="form__error"><img className="form__error--icon" src="" alt="" /> {errors.country}</p>}
-
+            {errors.country && (
+              <p className="form__error">
+                <img className="form__error--icon" src={error} alt="" />{" "}
+                {errors.country}
+              </p>
+            )}
           </div>
           <hr className="edit-wh__divider edit-wh__divider--vertical" />
           <div className="form__section">
@@ -181,7 +205,12 @@ const EditWarehouse = () => {
               value={formData.contact_name}
               onChange={handleInputChange}
             />
-            {errors.contact_name && <p className="form__error"><img className="form__error--icon" src="" alt="" /> {errors.contact_name}</p>}
+            {errors.contact_name && (
+              <p className="form__error">
+                <img className="form__error--icon" src={error} alt="" />{" "}
+                {errors.contact_name}
+              </p>
+            )}
             <h3 className="form__label">Position</h3>
             <input
               className={`form__input ${
@@ -194,7 +223,12 @@ const EditWarehouse = () => {
               value={formData.contact_position}
               onChange={handleInputChange}
             />
-                {errors.contact_position && <p className="form__error"><img className="form__error--icon" src="" alt="" /> {errors.contact_position}</p>}
+            {errors.contact_position && (
+              <p className="form__error">
+                <img className="form__error--icon" src={error} alt="" />{" "}
+                {errors.contact_position}
+              </p>
+            )}
 
             <h3 className="form__label">Phone Number</h3>
             <input
@@ -208,7 +242,12 @@ const EditWarehouse = () => {
               value={formData.contact_phone}
               onChange={handleInputChange}
             />
-                {errors.contact_phone && <p className="form__error"><img className="form__error--icon" src="" alt="" /> {errors.contact_phone}</p>}
+            {errors.contact_phone && (
+              <p className="form__error">
+                <img className="form__error--icon" src={error} alt="" />{" "}
+                {errors.contact_phone}
+              </p>
+            )}
 
             <h3 className="form__label">Email</h3>
             <input
@@ -222,7 +261,12 @@ const EditWarehouse = () => {
               value={formData.contact_email}
               onChange={handleInputChange}
             />
-                {errors.contact_email && <p className="form__error"><img className="form__error--icon" src="" alt="" /> {errors.contact_email}</p>}
+            {errors.contact_email && (
+              <p className="form__error">
+                <img className="form__error--icon" src={error} alt="" />{" "}
+                {errors.contact_email}
+              </p>
+            )}
           </div>
         </div>
         <div className="edit-wh__buttons">
