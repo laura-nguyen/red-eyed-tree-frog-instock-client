@@ -1,0 +1,65 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventory-list {
+  &__item-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    padding: 16px 24px;
+    display: flex;
+    gap: 20%;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 24px 16px;
+  }
+}
+
+.cell {
+  &__heading {
+    font-weight: 600;
+    color: $secondary-color-1;
+    padding-bottom: 4px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+  }
+
+  &__link-text {
+    color: $primary-color-2;
+    font-weight: 600;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    &--chevron {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

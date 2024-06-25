@@ -103,6 +103,26 @@ input {
   }
 }
 
+.tag {
+  height: 24px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+
+  &--out-of-stock {
+    background-color: rgba(201, 69, 21, 0.07);
+    color: $supporting-color-2;
+  }
+
+  &--in-stock {
+    background-color: rgba(21, 132, 99, 0.07);
+    color: $supporting-color-1;
+  }
+}
+
 .divider {
   border: none;
   border-bottom: 1px solid $secondary-color-2;
