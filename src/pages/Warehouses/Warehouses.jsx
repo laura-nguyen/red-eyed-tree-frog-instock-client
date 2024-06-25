@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 export default function Warehouses () {
   const API_URL = import.meta.env.VITE_API_URL;
   const [warehouseList, setWarehouse] = useState([]);
-  const [selectedWarehouse, seSelectedWarehouse] = useState(null);
-  let { warehouseId } = useParams();
   const getWarehouseListEndPoint = `${API_URL}api/warehouses`;
 
   const getwarehouseList = async () => {
@@ -14,7 +12,6 @@ export default function Warehouses () {
     try{
       const result= await axios.get(getWarehouseListEndPoint);
       const warehouseList = result.data;
-      console.log(warehouseList);
       setWarehouse(warehouseList);
     }catch(e){
       console.log(e);
@@ -25,7 +22,9 @@ export default function Warehouses () {
   }, []);
 
   return (
-    <div>Warehouses</div>
+    <main>
+      
+    </main>
   )
 }
 
