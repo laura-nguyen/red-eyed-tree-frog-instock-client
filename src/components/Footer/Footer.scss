@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals" as *;
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0;
+    
+    &__text{
+        color: $secondary-color-1;
+        font-size: 12.8px;
+    }
+}
