@@ -7,7 +7,9 @@
     justify-content: center;
     align-items: center;
     padding: 2.5rem 0;
-    
+    @include desktop{
+        padding: 3rem 0;
+    }
     &__text{
         color: $secondary-color-1;
         font-size: 12.8px;
