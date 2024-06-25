@@ -51,8 +51,27 @@
     height: 2.25rem;
     width: 100%;
     padding: 0 1rem;
+    &:focus-visible{
+        border-color: $primary-color-2;
+        outline: none;
+    }
+    &--error{
+        border-color: $supporting-color;
+    }
     @include tablet {
         height: 2.375rem;
+    }
+  }
+  &__error{
+    color: $supporting-color;
+    font-size: .75rem;
+    position: relative;
+    &--icon{
+        height: 1rem;
+        width: 1rem;
+        border: 1px solid red;
+        position: relative;
+        top: .1875rem;
     }
   }
 }
