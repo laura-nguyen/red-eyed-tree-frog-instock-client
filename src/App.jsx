@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
     <Header />
       <Routes>
-        <Route path='/warehouses' element ={<Warehouses/>}/>
+        <Route path='/' element ={<Warehouses/>}/>
         <Route path="/inventories" element={<Inventory />}/>
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
