@@ -16,6 +16,14 @@
         height: 11.625rem;
         padding: 2rem;
     }
+    @include desktop {
+        max-width: 63.75rem;
+        margin: auto;
+    }
+    &__background{
+        width: 100%;
+        background-color: $bg-color-1;
+    }
     &__logo{
         padding: 1.5rem;
         @include tablet{
