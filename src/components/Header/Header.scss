@@ -1,0 +1,23 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    background-color: $bg-color-1;
+    &__logo{
+        padding: 1.5rem;
+    }
+    .nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__item{
+            color: $primary-color-3;
+            text-decoration: none;
+        }
+    }
+}
