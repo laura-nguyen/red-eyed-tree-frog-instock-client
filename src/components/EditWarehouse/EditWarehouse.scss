@@ -13,6 +13,11 @@
         margin: 2rem;
         top: -8rem;
     }
+    @include desktop{
+        max-width: 63.75rem;
+        margin: auto;
+        top: -6rem;
+    }
   &__header {
     height: 5.75rem;
     display: flex;
@@ -21,6 +26,9 @@
     padding: 2rem 1.5rem 1.5rem;
     @include tablet{
         padding: 2rem;
+    }
+    @include desktop{
+        padding: 2.5rem;
     }
   }
   &__back-link {
@@ -53,6 +61,12 @@
     padding: 0 1.5rem;
     @include tablet{
         width: 100%;
+    }
+    @include tablet{
+        padding: 0 2rem;
+    }
+    @include desktop{
+        padding: 0 2.5rem;
     }
   }
   &__subtitle{
