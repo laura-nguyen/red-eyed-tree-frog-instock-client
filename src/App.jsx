@@ -4,6 +4,7 @@ import Inventory from "./pages/Inventory/Inventory";
 import Warehouses from "./pages/Warehouses/Warehouses";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Header from './components/Header/Header';
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/inventories" element={<Inventory />}/>
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
