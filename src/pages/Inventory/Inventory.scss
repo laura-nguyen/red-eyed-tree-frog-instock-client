@@ -16,9 +16,24 @@
   right: 16px;
   box-shadow: 0 2px 5px $box-shadow-color;
 
+  @include tablet {
+    top: -86px;
+  }
+
+  &__title-bar {
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &__heading {
     padding: 24px 16px 16px 16px;
     font-weight: 600;
     font-style: normal;
+
+    @include tablet {
+      flex: 1;
+    }
   }
 }

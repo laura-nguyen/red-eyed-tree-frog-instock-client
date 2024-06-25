@@ -6,8 +6,10 @@ const Inventory = () => {
   return (
     <main className="main">
       <section className="inventory">
-        <h1 className="inventory__heading">Inventory</h1>
-        <Search />
+        <div className="inventory__title-bar">
+          <h1 className="inventory__heading">Inventory</h1>
+          <Search />
+        </div>
         <hr className="divider" />
         <InventoryList />
       </section>

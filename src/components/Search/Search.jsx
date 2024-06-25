@@ -13,7 +13,7 @@ const Search = () => {
         />
         <img className="search__icon" src={searchIcon} alt="Search Icon" />
       </div>
-      <button className="button">+ Add New Item</button>
+      <button className="button button--search">+ Add New Item</button>
     </form>
   );
 };

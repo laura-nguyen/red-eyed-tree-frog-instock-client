@@ -27,7 +27,7 @@ const InventoryList = () => {
             </div>
           </div>
           <div className="inventory-list__right">
-            <div className="cell">
+            <div className="cell cell--no-flex">
               <h4 className="cell__heading">STATUS</h4>
               <div className="tag tag--in-stock">IN STOCK</div>
             </div>
