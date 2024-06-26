@@ -49,8 +49,8 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      width: 40%;
-      gap: rem;
+      width: 47%;
+      gap: 1rem;
     }
   }
 
@@ -94,7 +94,7 @@
 
   &--no-flex {
     @include tablet {
-      margin-left: 2rem;
+      margin-left: 0.5rem;
     }
   }
 
