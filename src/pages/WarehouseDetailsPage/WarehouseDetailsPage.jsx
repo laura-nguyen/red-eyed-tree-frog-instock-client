@@ -2,6 +2,7 @@ import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const WarehouseDetailsPage = () => {
   const [warehouseDetails, setWarehouseDetails] = useState([]);
@@ -9,9 +10,7 @@ const WarehouseDetailsPage = () => {
   const { warehouseId } = useParams();
 
   const getWarehouse = async () => {
-    let res = await axios.get(
-      `http://localhost:8080/api/warehouses/${warehouseId}`
-    );
+    let res = await axios.get(`${API_URL}/warehouses/${warehouseId}`);
     setWarehouseDetails(res.data);
   };
 
@@ -22,11 +21,8 @@ const WarehouseDetailsPage = () => {
   if (warehouseDetails.length < 1) {
     return <div>Loading...</div>;
   }
-  return (
-    <>
-      <WarehouseDetails warehouseDetails={warehouseDetails} />
-    </>
-  );
+
+  return <WarehouseDetails warehouseDetails={warehouseDetails} />;
 };
 
 export default WarehouseDetailsPage;
