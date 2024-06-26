@@ -8,7 +8,7 @@ import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./InventoryList.scss";
 
 const InventoryList = () => {
-  const API_URL = "http://localhost:8080/api";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const [inventories, setInventories] = useState([]);
 
