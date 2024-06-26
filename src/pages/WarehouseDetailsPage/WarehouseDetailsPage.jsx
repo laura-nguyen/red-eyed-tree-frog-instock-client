@@ -20,7 +20,7 @@ const WarehouseDetailsPage = () => {
   }, []);
 
   if (warehouseDetails.length < 1) {
-    return <div>loading...</div>;
+    return <div>Loading...</div>;
   }
   return (
     <>
