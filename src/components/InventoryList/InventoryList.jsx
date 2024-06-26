@@ -75,7 +75,7 @@ const InventoryList = () => {
         <div className="header-cell">
           <h4 className="header-cell__title">ACTIONS</h4>
           <img
-            className="header-cell__sort-icon"
+            className="header-cell__sort-icon header-cell__sort-icon--hidden"
             src={sortIcon}
             alt="Sort Icon"
           />
@@ -100,7 +100,7 @@ const InventoryList = () => {
                     />
                   </div>
                 </div>
-                <div className="cell">
+                <div className="cell cell--category">
                   <h4 className="cell__heading">CATEGORY</h4>
                   <p className="p-medium">{inventory.category}</p>
                 </div>
@@ -118,11 +118,11 @@ const InventoryList = () => {
                     {inventory.status}
                   </div>
                 </div>
-                <div className="cell">
+                <div className="cell cell--qty">
                   <h4 className="cell__heading">QTY</h4>
                   <p className="p-medium">{inventory.quantity}</p>
                 </div>
-                <div className="cell">
+                <div className="cell cell--warehouse">
                   <h4 className="cell__heading">WAREHOUSE</h4>
                   <p className="p-medium">{inventory.warehouse_name}</p>
                 </div>

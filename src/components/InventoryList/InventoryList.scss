@@ -1,13 +1,26 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+
 .inventory-list {
+  @include desktop {
+    padding: .5rem 1.5rem;
+  }
+  &__header {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
   &__item-wrapper {
     display: flex;
     flex-direction: column;
 
     @include tablet {
       flex-direction: row;
+      width: 100%;
     }
 
     &:hover {
@@ -22,7 +35,8 @@
 
     @include tablet {
       gap: 0;
-      flex: 1;
+      width: 100%;
+      padding: 0;
     }
   }
 
@@ -34,8 +48,9 @@
     @include tablet {
       flex-direction: row;
       align-items: center;
-      flex: 1;
-      gap: unset;
+      justify-content: space-between;
+      width: 40%;
+      gap: rem;
     }
   }
 
@@ -47,7 +62,8 @@
     @include tablet {
       flex-direction: row;
       align-items: center;
-      flex: 2;
+      justify-content: space-between;
+      width: 60%;
       gap: unset;
     }
   }
@@ -61,6 +77,10 @@
       flex-direction: row;
       justify-content: start;
       gap: 1rem;
+      margin-right: 1rem;
+    }
+    @include desktop{
+      
     }
   }
 }
@@ -68,12 +88,31 @@
 .cell {
   @include tablet {
     flex: 1;
+    padding: 1rem;
+    padding-right: 0;
   }
 
   &--no-flex {
     @include tablet {
-      flex: none;
-      padding: 0 10% 0 15%;
+      margin-left: 2rem;
+    }
+  }
+
+  &--category {
+    @include tablet {
+      margin-left: 3rem;
+    }
+  }
+
+  &--qty {
+    @include tablet {
+      margin-left: -.5rem;
+    }
+  }
+
+  &--warehouse {
+    @include tablet {
+      margin-left: -2rem;
     }
   }
 
@@ -108,19 +147,15 @@
   }
 }
 
-.inventory-list__header {
-  display: none;
-
-  @include tablet {
-    display: flex;
-  }
-}
-
 .header-cell {
   @include tablet {
     padding: 1rem;
     display: flex;
     align-items: flex-start;
+  }
+
+  &__sort-icon--hidden {
+    visibility: hidden;
   }
 
   &__title {
