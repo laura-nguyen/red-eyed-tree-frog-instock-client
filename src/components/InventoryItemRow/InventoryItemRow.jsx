@@ -34,7 +34,7 @@ const InventoryItemRow = ({ inventories }) => {
                 </div>
               </div>
               <div className="inventory-list__right">
-                <div className="cell cell--no-flex">
+                <div className="cell cell--status">
                   <h4 className="cell__heading">STATUS</h4>
                   <div
                     className={

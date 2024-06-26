@@ -27,59 +27,29 @@ const InventoryList = () => {
     return <div className="loader">Loading...</div>;
   }
 
+  const headerArray = [
+    "INVENTORY ITEM",
+    "CATEGORY",
+    "STATUS",
+    "QTY",
+    "WAREHOUSE",
+    "ACTIONS",
+  ];
+
   return (
     <section className="inventory-list">
       <article className="inventory-list__header">
-        <div className="header-cell">
-          <h4 className="header-cell__title">INVENTORY ITEM</h4>
-          <img
-            className="header-cell__sort-icon"
-            src={sortIcon}
-            alt="Sort Icon"
-          />
-        </div>
-        <div className="header-cell">
-          <h4 className="header-cell__title">CATEGORY</h4>
-          <img
-            className="header-cell__sort-icon"
-            src={sortIcon}
-            alt="Sort Icon"
-          />
-        </div>
-        <div className="header-cell">
-          <h4 className="header-cell__title">STATUS</h4>
-          <img
-            className="header-cell__sort-icon"
-            src={sortIcon}
-            alt="Sort Icon"
-          />
-        </div>
-        <div className="header-cell">
-          <h4 className="header-cell__title">QTY</h4>
-          <img
-            className="header-cell__sort-icon"
-            src={sortIcon}
-            alt="Sort Icon"
-          />
-        </div>
-        <div className="header-cell">
-          <h4 className="header-cell__title">WAREHOUSE</h4>
-          <img
-            className="header-cell__sort-icon"
-            src={sortIcon}
-            alt="Sort Icon"
-          />
-        </div>
-        <div className="header-cell">
-          <h4 className="header-cell__title">ACTIONS</h4>
-          <img
-            className="header-cell__sort-icon header-cell__sort-icon--hidden"
-            src={sortIcon}
-            alt="Sort Icon"
-          />
-        </div>
+        {headerArray.map((title, index) => (
+          <div key={index} className="header-cell">
+            <h4 className="header-cell__title">{title}</h4>
+            <img
+              className="header-cell__sort-icon"
+              src={sortIcon}
+              alt="Sort Icon"
+            />
+          </div>
+        ))}
       </article>
-
       <InventoryItemRow inventories={inventories} />
     </section>
   );
