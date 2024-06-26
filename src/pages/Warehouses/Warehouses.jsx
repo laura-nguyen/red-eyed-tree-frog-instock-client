@@ -1,10 +1,15 @@
-import AddWarehouse from "../../components/AddWarehouse/AddWarehouse"
+import { useNavigate } from "react-router-dom";
 
 const Warehouses = () => {
+  const navigate = useNavigate();
+  const handleAddClick = () => {
+    navigate(`/warehouses/add/`);
+  };
   return (
     <div>
       <p>Warehouses</p>
-      <AddWarehouse />
+      <button onClick={() => handleAddClick()}>Add</button>
+      
     </div>
   )
 }

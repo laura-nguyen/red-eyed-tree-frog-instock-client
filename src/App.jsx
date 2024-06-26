@@ -5,6 +5,7 @@ import Warehouses from "./pages/Warehouses/Warehouses";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
     <Header />
       <Routes>
         <Route path='/warehouses' element ={<Warehouses/>}/>
+        <Route path='/warehouses/add' element ={<AddWarehouse/> }/>
+
         <Route path="/inventories" element={<Inventory />}/>
         <Route path="/*" element={<PageNotFound />} />
       </Routes>

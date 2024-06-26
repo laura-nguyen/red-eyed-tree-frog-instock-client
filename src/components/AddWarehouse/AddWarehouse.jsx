@@ -1,9 +1,9 @@
 import "./AddWarehouse.scss"
-import { Link, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
-// import backArrow from "../../assets/icons/arrow_back-24px.svg";
-// import error from "../../assets/icons/error-24px.svg";
+import backArrow from "../../assets/icons/arrow_back-24px.svg";
+import error from "../../assets/icons/error-24px.svg";
 
 const AddWarehouse = () => {
   const [formData, setFormData] = useState({
@@ -75,7 +75,8 @@ const AddWarehouse = () => {
               "http://localhost:8080/api/warehouses",
               formData
             );
-            console.log("Warehouse added successfully:", response.data);
+            alert("Warehouse added successfully");
+        navigate("/warehouses");
           } catch (error) {
             console.error("Error adding warehouse:", error);
           }
@@ -88,7 +89,7 @@ const AddWarehouse = () => {
         <Link className="add-wh__back-link" to={"/warehouses"}>
           <img
             className="add-wh__back-icon"
-            src=""
+            src={backArrow}
             alt="back arrow"
           />
         </Link>
