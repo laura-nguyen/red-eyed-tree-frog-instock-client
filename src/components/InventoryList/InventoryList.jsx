@@ -83,22 +83,24 @@ const InventoryList = () => {
       </article>
 
       {inventories.map((inventory) => (
-        <Link key={inventory.id} to={`/inventory/${inventory.id}`}>
+        <div key={inventory.id}>
           <article className="inventory-list__item-wrapper">
             <div className="inventory-list__item">
               <div className="inventory-list__left">
                 <div className="cell">
                   <h4 className="cell__heading">INVENTORY ITEM</h4>
-                  <div className="cell__link">
-                    <p className="cell__link-text p-medium">
-                      {inventory.item_name}
-                    </p>
-                    <img
-                      className="cell__icon cell__icon--chevron"
-                      src={chevronIcon}
-                      alt="View Inventory Icon"
-                    />
-                  </div>
+                  <Link to={`/inventory/${inventory.id}`}>
+                    <div className="cell__link">
+                      <p className="cell__link-text p-medium">
+                        {inventory.item_name}
+                      </p>
+                      <img
+                        className="cell__icon cell__icon--chevron"
+                        src={chevronIcon}
+                        alt="View Inventory Icon"
+                      />
+                    </div>
+                  </Link>
                 </div>
                 <div className="cell cell--category">
                   <h4 className="cell__heading">CATEGORY</h4>
@@ -142,7 +144,7 @@ const InventoryList = () => {
             </div>
           </article>
           <hr className="divider" />
-        </Link>
+        </div>
       ))}
     </section>
   );

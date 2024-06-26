@@ -172,4 +172,10 @@ a {
 .divider {
   border: none;
   border-bottom: 1px solid $secondary-color-2;
+
+  &--hide-big {
+    @include tablet {
+      display: none;
+    }
+  }
 }
