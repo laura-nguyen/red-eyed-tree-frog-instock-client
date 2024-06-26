@@ -1,22 +1,26 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-
 .inventory-list {
   @include desktop {
-    padding: .5rem 1.5rem;
+    padding: 0 0 0.5rem 0;
   }
+
   &__header {
     display: none;
 
     @include tablet {
       display: flex;
       justify-content: space-between;
+      background-color: #f7f8f9b2;
+      padding: 0 1.5rem;
     }
   }
+
   &__item-wrapper {
     display: flex;
     flex-direction: column;
+    padding: 0 1.5rem;
 
     @include tablet {
       flex-direction: row;
@@ -29,7 +33,7 @@
   }
 
   &__item {
-    padding: 1rem 1.5rem;
+    padding: 1rem 0;
     display: flex;
     gap: 20%;
 
@@ -49,8 +53,8 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      width: 47%;
-      gap: 1rem;
+      width: 40%;
+      gap: unset;
     }
   }
 
@@ -78,9 +82,6 @@
       justify-content: start;
       gap: 1rem;
       margin-right: 1rem;
-    }
-    @include desktop{
-      
     }
   }
 }

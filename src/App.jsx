@@ -3,7 +3,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import Warehouses from "./pages/Warehouses/Warehouses";
 import Inventory from "./pages/Inventory/Inventory";
-import InventoryDetail from "./components/InventoryDetail/InventoryDetail";
+import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import Footer from "./components/Footer/Footer";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/warehouses" element={<Warehouses />} />
         <Route path="/inventories" element={<Inventory />} />
-        <Route path="/inventory/:id" element={<InventoryDetail />} />
+        <Route path="/inventory/:id" element={<InventoryDetails />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />

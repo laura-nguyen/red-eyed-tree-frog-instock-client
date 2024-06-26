@@ -10,7 +10,7 @@ const Inventory = () => {
           <h1 className="inventory__heading">Inventory</h1>
           <Search />
         </div>
-        <hr className="divider" />
+        <hr className="divider divider--hide-big" />
         <InventoryList />
       </section>
     </main>
