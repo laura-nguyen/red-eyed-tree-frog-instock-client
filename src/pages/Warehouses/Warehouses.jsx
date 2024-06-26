@@ -2,6 +2,11 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import '../Warehouses/Warehouses.scss';
+import Search from "../../components/Search/Search";
+import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
+import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
+import editIcon from "../../assets/icons/edit-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 
 export default function Warehouses () {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -22,11 +27,24 @@ export default function Warehouses () {
   }, []);
 
   return (
-      <body>
-          <table id="inventoryTable">
+    <main className="main">
+    <section className="warehouse">
+      <div className="warehouse__title-bar">
+        <h1 className="warehouse__heading">Warehouse</h1>
+        <Search />
+      </div>
+      <hr className="divider" />
+            <table id="warehouseTable">
               <thead>
                   <tr>
-                      <th>WAREHOUSE</th>
+                      <th>
+                        WAREHOUSE
+                        <img
+                            className="header-cell__sort-icon"
+                            src={sortIcon}
+                            alt="Sort Icon"
+                          />
+                      </th>
                       <th>ADDRESS</th>
                       <th>CONTACT NAME</th>
                       <th>CONTACT INFORMATION</th>
@@ -34,26 +52,40 @@ export default function Warehouses () {
                   </tr>
               </thead>
               <tbody>
-                  {/* <!-- Data rows will go here --> */}
-                  <tr>
-                      <td>Warehouse </td>
-                      <td>Item A</td>
-                      <td>Description A</td>
-                      <td>Category A</td>
-                      <td>Available</td>
-                  </tr>
-                  <tr>
-                      <td>Warehouse B</td>
-                      <td>Item B</td>
-                      <td>Description B</td>
-                      <td>Category B</td>
-                      <td>Out of Stock</td>
-                  </tr>
-                  {/* <!-- More rows as needed --> */}
-              </tbody>
-          </table>
-        </body>
+                { warehouseList?.length > 0 ? (
+                  warehouseList.map((warehouse, index) => (
+                      <tr key={warehouse.id}>
+                          <td>
+                            <div>
+                            {warehouse.warehouse_name} 
 
+                            </div>
+                          </td>
+                          <td>{warehouse.address}</td>
+                          <td>{warehouse.contact_name}</td>
+                          <td>{warehouse.contact_phone}</td>
+                          <td>
+                          <div className="inventory-list__actions">
+                            <img
+                              className="cell__icon"
+                              src={deleteIcon}
+                              alt="Delete Inventory Icon"
+                            />
+                            <img
+                              className="cell__icon"
+                              src={editIcon}
+                              alt="Edit Inventory Icon"
+                            />
+                          </div>
+                          </td>
+                      </tr>
+                  )))
+                   : (  <></>)
+                }
+            </tbody>
+          </table>
+    </section>
+  </main>
   )
 }
 

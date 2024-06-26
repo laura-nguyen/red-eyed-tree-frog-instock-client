@@ -1,19 +1,64 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.main {
+  position: relative;
+  height: 100vh;
+  background-color: $bg-color-2;
+}
+
+.warehouse {
+  position: absolute;
+  top: -60px;
+  left: 16px;
+  z-index: 1;
+  background: white;
+  right: 16px;
+  box-shadow: 0 2px 5px $box-shadow-color;
+
+  @include tablet {
+    top: -86px;
+  }
+
+  @include desktop {
+    max-width: 63.75rem;
+    margin: auto;
+  }
+
+  &__title-bar {
+    @include tablet {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__heading {
+    padding: 24px 16px 16px 16px;
+    font-weight: 600;
+    font-style: normal;
+
+    @include tablet {
+      flex: 1;
+    }
+  }
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
+    padding-left: 1rem;
 }
 
 th, td {
-    padding: 8px;
+    padding: 16px;
     text-align: left;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: white;
 }
 
 th:hover {
