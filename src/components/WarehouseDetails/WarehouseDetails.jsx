@@ -1,7 +1,7 @@
 import "./WarehouseDetails.scss";
 import { Link } from "react-router-dom";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
-import editIcon from "../../assets/icons/edit-24px.svg";
+import editIcon from "../../assets/icons/edit-20px-white.svg";
 
 const WarehouseDetails = () => {
   return (
