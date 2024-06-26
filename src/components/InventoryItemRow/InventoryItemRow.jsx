@@ -9,7 +9,7 @@ const InventoryItemRow = ({ inventories }) => {
   return (
     <>
       {inventories.map((inventory) => (
-        <div key={inventory.id}>
+        <div key={inventory.id} className="inventory-list">
           <article className="inventory-list__item-wrapper">
             <div className="inventory-list__item">
               <div className="inventory-list__left">
