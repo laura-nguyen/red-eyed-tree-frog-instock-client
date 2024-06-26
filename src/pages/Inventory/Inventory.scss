@@ -20,6 +20,11 @@
     top: -86px;
   }
 
+  @include desktop {
+    max-width: 63.75rem;
+    margin: auto;
+  }
+
   &__title-bar {
     @include tablet {
       display: flex;

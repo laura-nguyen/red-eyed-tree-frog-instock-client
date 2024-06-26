@@ -9,6 +9,10 @@
     @include tablet {
       flex-direction: row;
     }
+
+    &:hover {
+      background-color: $hovered-item-color;
+    }
   }
 
   &__item {
@@ -64,7 +68,6 @@
 .cell {
   @include tablet {
     flex: 1;
-    text-align: center;
   }
 
   &--no-flex {
@@ -85,8 +88,8 @@
   }
 
   &__link {
-    text-decoration: none;
     display: flex;
+    align-items: center;
   }
 
   &__link-text {
@@ -101,6 +104,30 @@
     &--chevron {
       width: 20px;
       height: 20px;
+    }
+  }
+}
+
+.inventory-list__header {
+  display: none;
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.header-cell {
+  @include tablet {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__title {
+    @include tablet {
+      font-weight: 600;
+      color: $secondary-color-1;
+      padding-bottom: 4px;
     }
   }
 }

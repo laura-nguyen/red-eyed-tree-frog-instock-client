@@ -84,11 +84,6 @@ input {
   outline: none;
   border: 1px solid $secondary-color-2;
 
-  @include tablet {
-    height: 38px;
-    width: 185px;
-  }
-
   &::placeholder {
     color: $secondary-color-1;
     opacity: 1;
@@ -98,6 +93,12 @@ input {
     border: 1px solid $primary-color-2;
     color: $primary-color-1;
   }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .error {
