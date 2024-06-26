@@ -1,23 +1,25 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.scss';
-import Inventory from "./pages/Inventory/Inventory";
+import "./App.scss";
+import Header from "./components/Header/Header";
 import Warehouses from "./pages/Warehouses/Warehouses";
-import PageNotFound from "./pages/PageNotFound/PageNotFound";
-import Header from './components/Header/Header';
+import Inventory from "./pages/Inventory/Inventory";
+import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import Footer from "./components/Footer/Footer";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 function App() {
   return (
     <BrowserRouter>
-    <Header />
+      <Header />
       <Routes>
-        <Route path='/warehouses' element ={<Warehouses/>}/>
-        <Route path="/inventories" element={<Inventory />}/>
+        <Route path="/warehouses" element={<Warehouses />} />
+        <Route path="/inventories" element={<Inventory />} />
+        <Route path="/inventory/:id" element={<InventoryDetails />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
