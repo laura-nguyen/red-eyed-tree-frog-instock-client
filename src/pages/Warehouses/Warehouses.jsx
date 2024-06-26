@@ -26,39 +26,32 @@ export default function Warehouses () {
           <table id="inventoryTable">
               <thead>
                   <tr>
-                      <th onclick="sortTable(0)">ID</th>
-                      <th onclick="sortTable(1)">Warehouse Name</th>
-                      <th onclick="sortTable(2)">Item Name</th>
-                      <th onclick="sortTable(3)">Description</th>
-                      <th onclick="sortTable(4)">Category</th>
-                      <th onclick="sortTable(5)">Status</th>
-                      <th onclick="sortTable(6)">Quantity</th>
+                      <th>WAREHOUSE</th>
+                      <th>ADDRESS</th>
+                      <th>CONTACT NAME</th>
+                      <th>CONTACT INFORMATION</th>
+                      <th>ACTIONS</th>
                   </tr>
               </thead>
               <tbody>
                   {/* <!-- Data rows will go here --> */}
                   <tr>
-                      <td>1</td>
-                      <td>Warehouse A</td>
+                      <td>Warehouse </td>
                       <td>Item A</td>
                       <td>Description A</td>
                       <td>Category A</td>
                       <td>Available</td>
-                      <td>100</td>
                   </tr>
                   <tr>
-                      <td>2</td>
                       <td>Warehouse B</td>
                       <td>Item B</td>
                       <td>Description B</td>
                       <td>Category B</td>
                       <td>Out of Stock</td>
-                      <td>50</td>
                   </tr>
                   {/* <!-- More rows as needed --> */}
               </tbody>
           </table>
-          <script src="script.js"></script>
         </body>
 
   )
