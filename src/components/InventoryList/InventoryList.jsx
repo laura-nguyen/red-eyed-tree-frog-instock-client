@@ -29,8 +29,6 @@ const InventoryList = () => {
     return <div className="loader">Loading...</div>;
   }
 
-  console.log(inventories);
-
   return (
     <section className="inventory-list">
       <article className="inventory-list__header">

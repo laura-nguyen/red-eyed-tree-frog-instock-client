@@ -12,22 +12,22 @@
 }
 
 h1 {
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
 
   @include tablet {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 }
 
 h2 {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 
   @include tablet {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -35,51 +35,51 @@ h3,
 .p-medium,
 label,
 button {
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
 
   @include tablet {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 
 h4 {
-  font-size: 11px;
-  line-height: 16px;
+  font-size: 0.6875rem;
+  line-height: 1rem;
 
   @include tablet {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
   }
 }
 
 .p-large {
-  font-size: 15px;
-  line-height: 26px;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
 
   @include tablet {
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 1rem;
+    line-height: 1.75rem;
   }
 }
 
 .p-small {
   font-size: 11;
-  line-height: 16px;
+  line-height: 1rem;
 
   @include tablet {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
   }
 }
 
 input {
-  height: 36px;
+  height: 2.25rem;
   width: 100%;
-  padding: 0 16px;
-  margin-top: 4px;
-  border-radius: 20px;
+  padding: 0 1rem;
+  margin-top: 0.25rem;
+  border-radius: 1.25rem;
   opacity: 1;
   outline: none;
   border: 1px solid $secondary-color-2;
@@ -108,16 +108,16 @@ a {
 
 .button {
   width: 100%;
-  height: 36px;
-  padding: 0 16px;
-  border-radius: 20px;
+  height: 2.25rem;
+  padding: 0 1rem;
+  border-radius: 1.25rem;
   background-color: $primary-color-2;
   color: $primary-color-3;
   border: none;
 
   @include tablet {
     width: auto;
-    height: 38px;
+    height: 2.375rem;
   }
 
   &:hover {
@@ -147,13 +147,13 @@ a {
 }
 
 .tag {
-  height: 24px;
-  padding: 4px 8px;
+  height: 1.5rem;
+  padding: 0.25rem 0.5rem;
   border: none;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   font-weight: 600;
-  font-size: 11px;
-  line-height: 16px;
+  font-size: 0.6875rem;
+  line-height: 1rem;
 
   &--out-of-stock {
     background-color: rgba(201, 69, 21, 0.07);

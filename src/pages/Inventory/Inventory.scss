@@ -9,15 +9,15 @@
 
 .inventory {
   position: absolute;
-  top: -60px;
-  left: 16px;
+  top: -3.75rem;
+  left: 1rem;
   z-index: 1;
   background: white;
-  right: 16px;
+  right: 1rem;
   box-shadow: 0 2px 5px $box-shadow-color;
 
   @include tablet {
-    top: -86px;
+    top: -5.375rem;
   }
 
   @include desktop {
@@ -33,7 +33,7 @@
   }
 
   &__heading {
-    padding: 24px 16px 16px 16px;
+    padding: 1.5rem 1rem 1rem 1rem;
     font-weight: 600;
     font-style: normal;
 

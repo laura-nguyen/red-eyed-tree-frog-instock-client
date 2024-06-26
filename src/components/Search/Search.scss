@@ -7,7 +7,7 @@
   @include tablet {
     display: flex;
     flex: 1;
-    gap: 16px;
+    gap: 1rem;
     justify-content: end;
     z-index: 1;
     align-items: center;
@@ -15,7 +15,7 @@
 
   &__control {
     position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 
     @include tablet {
       margin-bottom: 0;
@@ -25,18 +25,18 @@
   &__icon {
     position: absolute;
     top: 50%;
-    right: 16px;
+    right: 1rem;
     transform: translateY(-50%);
   }
 
   &__input {
     @include tablet {
-      height: 38px;
-      width: 185px;
+      height: 2.375rem;
+      width: 11.5625rem;
     }
 
     @include desktop {
-      width: 300px;
+      width: 18.75rem;
     }
   }
 }
