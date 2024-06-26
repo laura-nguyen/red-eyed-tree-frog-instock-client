@@ -1,6 +1,11 @@
+import AddWarehouse from "../../components/AddWarehouse/AddWarehouse"
+
 const Warehouses = () => {
   return (
-    <div>Warehouses</div>
+    <div>
+      <p>Warehouses</p>
+      <AddWarehouse />
+    </div>
   )
 }
 
