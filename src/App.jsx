@@ -14,9 +14,10 @@ function App() {
       <Routes>
         <Route path='/' element ={<DeleteWarehouse/>}/>
         <Route path="/inventories" element={<Inventory />}/>
+        <Route path="/:id" element={<DeleteWarehouse />}></Route>
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
   )
 }
