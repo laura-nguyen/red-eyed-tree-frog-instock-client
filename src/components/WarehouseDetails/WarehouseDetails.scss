@@ -1,48 +1,148 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.wrapper {
+.wh-details__wrapper {
   background-color: $primary-color-3;
+  margin: 0 1rem;
+  position: relative;
+  top: -4rem;
+  color: $primary-color-1;
+  box-shadow: 0px 2px 5px 0px #13182c1a;
+  border-radius: 4px;
+  @include tablet {
+    margin: 2rem;
+    top: -7rem;
+  }
+  @include desktop {
+    max-width: 63.75rem;
+    margin: auto;
+    top: -6rem;
+  }
 }
 
-.header {
+// .wh-details__divider {
+//   border-top: solid 1px $secondary-color-2;
+// }
+
+.wh-details__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 1.5rem 1rem;
+  border-bottom: solid 1px $secondary-color-2;
+  @include tablet {
+    padding: 2rem 2rem 1.5rem;
+  }
 }
 
-.details {
+.wh-details__header-icon--back {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-// const WarehouseDetails = () => {
-//     return (
-//       <main className="wrapper">
-//         <div className="wh-details__header">
-//           <Link className="wh-details__header-btn--back" to={"/warehouses"}>
-//             <img
-//               className="wh-details__header-icon--back"
-//               src={backArrow}
-//               alt="back arrow"
-//             />
-//           </Link>
-//           <h1 className="edit-wh__title">Washington</h1>
-//           <button className="edit-wh__header-btn--edit"></button>
+.edit-wh__header-btn--edit {
+  display: none;
+  @include tablet {
+    display: contents;
+    background-color: $primary-color-2;
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+.edit-wh__header-btn--edit-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+
+  background-color: $primary-color-2;
+  border-radius: 50%;
+  border: none;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.edit-wh__title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-left: -25px;
+  @include tablet {
+    margin-left: -200px;
+  }
+}
+
+.wh-details__info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 1rem;
+
+    padding: 2rem;
+  }
+}
+
+.wh-details__text--address {
+  @include tablet {
+    max-width: 60%;
+  }
+}
+.wh-details__contact {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  @include tablet {
+    padding: 0 2rem;
+    border-left: solid 1px $secondary-color-2;
+  }
+}
+
+.wh-details__label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  line-height: 1rem;
+  padding-bottom: 0.25rem;
+
+  @include tablet {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.wh-details__text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+// <div className="wh-details__info">
+//         <div className="wh-details__address">
+//           <h4>Warehouse Address:</h4>
+//           <p>Washington, USA</p>
 //         </div>
-//         <hr className="edit-wh__divider" />
-
-//         <div className="wh-details__wrapper">
-//           <div className="wh-details__address">
-//             <h4>Warehouse Address:</h4>
-//             <p>Washington, USA</p>
+//         <div className="wh-details__contact">
+//           <div className="wh-details__contact-name">
+//             <h4>Contact Name:</h4>
+//             <p>Graeme Lyon</p>
+//             <p>Warehouse Manager</p>
 //           </div>
-//           <div className="wh-etails__contact">
-//             <div className="wh-details__contact-name">
-//               <h4>Contact Name:</h4>
-//               <p>Graeme Lyon</p>
-//               <p>Warehouse Manager</p>
-//             </div>
-//             <div className="wh-details__contact-info">
-//               <h4>Contact Information:</h4>
-//               <p>453454353443</p>
-//               <p>glyon@instock.com</p>
-//             </div>
+//           <div className="wh-details__contact-info">
+//             <h4>Contact Information:</h4>
+//             <p>453454353443</p>
+//             <p>glyon@instock.com</p>
 //           </div>
 //         </div>
-//       </main>
+//       </div>
