@@ -1,0 +1,20 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/globals' as *;
+
+.delete {
+    &__iconDiv {
+        display: inline-flex;
+        width: 100%;
+        justify-content: end;
+    }
+    &__question {
+        font-weight: 1.75rem;
+        font-weight: 600;
+        color: $primary-color-1;
+    }
+    &__description {
+        font-weight: .9375rem;
+        color: $primary-color-1;
+    }
+}
