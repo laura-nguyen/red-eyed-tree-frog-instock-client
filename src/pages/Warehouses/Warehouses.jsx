@@ -1,7 +1,7 @@
-const Warehouses = () => {
-  return (
-    <div>Warehouses</div>
-  )
-}
+import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 
-export default Warehouses
+const Warehouses = () => {
+  return <WarehouseDetails />;
+};
+
+export default Warehouses;
