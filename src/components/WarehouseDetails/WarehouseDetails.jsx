@@ -3,6 +3,17 @@ import "./WarehouseDetails.scss";
 const WarehouseDetails = () => {
   return (
     <main className="wrapper">
+      <div className="edit-wh__header">
+        <Link className="edit-wh__back-link" to={"/warehouses"}>
+          <img
+            className="edit-wh__back-icon"
+            src={backArrow}
+            alt="back arrow"
+          />
+        </Link>
+        <h1 className="edit-wh__title">Edit Warehouse</h1>
+      </div>
+      <hr className="edit-wh__divider" />
       <div className="header">
         <button className="header__button--back"></button>
         <h1 className="header__name">Washington</h1>
