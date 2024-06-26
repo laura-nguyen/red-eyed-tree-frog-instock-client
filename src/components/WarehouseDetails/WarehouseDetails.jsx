@@ -40,10 +40,12 @@ const WarehouseDetails = ({ warehouseDetails }) => {
       <div className="wh-details__info">
         <div className="wh-details__address">
           <h4 className="wh-details__label">Warehouse Address:</h4>
-          <p className="wh-details__text">{address},</p>
-          <p className="wh-details__text">
-            {city}, {country}
-          </p>
+          <div className="wh-details__text--address">
+            <p className="wh-details__text">{address},</p>
+            <p className="wh-details__text">
+              {city}, {country}
+            </p>
+          </div>
         </div>
         <div className="wh-details__contact">
           <div className="wh-details__contact-name">

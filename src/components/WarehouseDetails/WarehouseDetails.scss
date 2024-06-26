@@ -1,27 +1,29 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.wh-details__wrapper {
-  background-color: $primary-color-3;
-  margin: 0 1rem;
-  position: relative;
-  top: -4rem;
-  color: $primary-color-1;
-  box-shadow: 0rem 0.125rem 0.3125rem 0rem #13182c1a;
-  border-radius: 0.25rem;
+.wh-details {
+  &__wrapper {
+    background-color: $primary-color-3;
+    margin: 0 1rem;
+    position: relative;
+    top: -4rem;
+    color: $primary-color-1;
+    box-shadow: 0rem 0.125rem 0.3125rem 0rem #13182c1a;
+    border-radius: 0.25rem;
 
-  @include tablet {
-    margin: 2rem;
-    top: -7rem;
+    @include tablet {
+      margin: 2rem;
+      top: -7rem;
+    }
+
+    @include desktop {
+      max-width: 63.75rem;
+      margin: auto;
+      top: -6rem;
+    }
   }
 
-  @include desktop {
-    max-width: 63.75rem;
-    margin: auto;
-    top: -6rem;
-  }
-
-  .wh-details__header {
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -32,9 +34,11 @@
       padding: 1.5rem 2rem;
     }
 
-    &-icon--back {
-      width: 1.5rem;
-      height: 1.5rem;
+    &-icon {
+      &--back {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
 
     &-text-wrapper {
@@ -77,20 +81,20 @@
         }
       }
     }
+  }
 
-    .wh-details__title {
-      font-size: 1.75rem;
-      font-weight: 600;
-      line-height: 2.25rem;
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 2.25rem;
 
-      @include tablet {
-        font-size: 2rem;
-        line-height: 2.5rem;
-      }
+    @include tablet {
+      font-size: 2rem;
+      line-height: 2.5rem;
     }
   }
 
-  .wh-details__info {
+  &__info {
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -106,7 +110,7 @@
     }
   }
 
-  .wh-details__contact {
+  &__contact {
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -123,7 +127,7 @@
     }
   }
 
-  .wh-details__label {
+  &__label {
     font-size: 0.6875rem;
     text-transform: uppercase;
     line-height: 1rem;
@@ -135,7 +139,7 @@
     }
   }
 
-  .wh-details__text {
+  &__text {
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.25rem;
@@ -143,6 +147,16 @@
     @include tablet {
       font-size: 0.875rem;
       line-height: 1.375rem;
+    }
+
+    &--address {
+      display: flex;
+      gap: 0.2rem;
+
+      @include tablet {
+        flex-direction: column;
+        gap: 0;
+      }
     }
   }
 }
