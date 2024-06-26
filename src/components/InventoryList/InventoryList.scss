@@ -53,8 +53,8 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      width: 40%;
-      gap: unset;
+      width: 70%;
+      gap: 1rem;
     }
   }
 
@@ -67,7 +67,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      width: 60%;
+      width: 50%;
       gap: unset;
     }
   }
@@ -93,15 +93,15 @@
     padding-right: 0;
   }
 
-  &--no-flex {
+  &--status{
     @include tablet {
-      margin-left: 0.5rem;
+      margin-left: -3rem;
     }
   }
 
   &--category {
     @include tablet {
-      margin-left: 3rem;
+      margin-left: 0;
     }
   }
 
