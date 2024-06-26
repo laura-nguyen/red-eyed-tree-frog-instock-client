@@ -42,11 +42,15 @@ const InventoryList = () => {
         {headerArray.map((title, index) => (
           <div key={index} className="header-cell">
             <h4 className="header-cell__title">{title}</h4>
-            <img
-              className="header-cell__sort-icon"
-              src={sortIcon}
-              alt="Sort Icon"
-            />
+            {title !== "ACTIONS" ? (
+              <img
+                className="header-cell__sort-icon"
+                src={sortIcon}
+                alt="Sort Icon"
+              />
+            ) : (
+              ""
+            )}
           </div>
         ))}
       </article>

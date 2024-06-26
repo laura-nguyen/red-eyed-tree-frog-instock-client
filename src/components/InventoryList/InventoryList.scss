@@ -33,7 +33,7 @@
   }
 
   &__item {
-    padding: 1rem 1.5rem;
+    padding: 1rem 0;
     display: flex;
     gap: 20%;
 
@@ -54,7 +54,7 @@
       align-items: center;
       justify-content: space-between;
       width: 40%;
-      gap: rem;
+      gap: unset;
     }
   }
 
