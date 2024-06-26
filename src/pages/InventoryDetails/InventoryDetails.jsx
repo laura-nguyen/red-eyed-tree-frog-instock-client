@@ -1,7 +1,7 @@
 import "./InventoryDetails.scss";
 
 const InventoryDetails = () => {
-  return <div>InventoryDetails</div>;
+  return <main>InventoryDetails</main>;
 };
 
 export default InventoryDetails;
