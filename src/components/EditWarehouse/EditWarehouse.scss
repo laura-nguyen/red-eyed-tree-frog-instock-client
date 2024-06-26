@@ -7,28 +7,28 @@
   position: relative;
   top: -4rem;
   color: $primary-color-1;
-  box-shadow: 0px 2px 5px 0px #13182C1A;
-    border-radius: 4px;
-    @include tablet {
-        margin: 2rem;
-        top: -8rem;
-    }
-    @include desktop{
-        max-width: 63.75rem;
-        margin: auto;
-        top: -6rem;
-    }
+  box-shadow: 0px 2px 5px 0px #13182c1a;
+  border-radius: 4px;
+  @include tablet {
+    margin: 2rem;
+    top: -8rem;
+  }
+  @include desktop {
+    max-width: 63.75rem;
+    margin: auto;
+    top: -6rem;
+  }
   &__header {
     height: 5.75rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 2rem 1.5rem 1.5rem;
-    @include tablet{
-        padding: 2rem;
+    @include tablet {
+      padding: 2rem;
     }
-    @include desktop{
-        padding: 2.5rem;
+    @include desktop {
+      padding: 2.5rem;
     }
   }
   &__back-link {
@@ -38,85 +38,87 @@
   &__title {
     font-size: 1.75rem;
     font-weight: 600;
-    @include tablet{
-        font-size: 2rem;
+    @include tablet {
+      font-size: 2rem;
     }
   }
   &__divider {
-    border: $secondary-color-2 solid 1px;
-    &--vertical{
-        margin-top: 1.5rem;
+    border: none;
+    border-top: $secondary-color-2 solid 1px;
+    border-left: $secondary-color-2 solid 1px;
+    &--vertical {
+      margin-top: 1.5rem;
     }
   }
-  .form{
-    &__sections{
-        @include tablet{
-            display: flex;
-            width: 100%;
-            justify-content: center;
-        }
-    }
-  &__section {
-    padding: 0 1.5rem;
-    @include tablet{
+  .form {
+    &__sections {
+      @include tablet {
+        display: flex;
         width: 100%;
+        justify-content: center;
+      }
     }
-    @include tablet{
+    &__section {
+      padding: 0 1.5rem;
+      @include tablet {
+        width: 100%;
+      }
+      @include tablet {
         padding: 0 2rem;
-    }
-    @include desktop{
+      }
+      @include desktop {
         padding: 0 2.5rem;
+      }
     }
-  }
-  &__subtitle{
-    font-weight: 600;
-    font-size: 1.25rem;
-    padding: 1rem 0 .5rem;
-    @include tablet {
+    &__subtitle {
+      font-weight: 600;
+      font-size: 1.25rem;
+      padding: 1rem 0 0.5rem;
+      @include tablet {
         font-size: 1.5rem;
+      }
     }
-  }
-  &__label{
-    font-weight: 600;
-    font-size: .8125rem;
-    padding: 1rem 0 .25rem;
-    @include tablet {
-        font-size: .875rem;
+    &__label {
+      font-weight: 600;
+      font-size: 0.8125rem;
+      padding: 1rem 0 0.25rem;
+      @include tablet {
+        font-size: 0.875rem;
+      }
     }
-  }
-  &__input{
-    border: 1px $secondary-color-2 solid;
-    border-radius: 20px;
-    height: 2.25rem;
-    width: 100%;
-    padding: 0 1rem;
-    &:focus-visible{
+    &__input {
+      border: 1px $secondary-color-2 solid;
+      border-radius: 20px;
+      height: 2.25rem;
+      width: 100%;
+      padding: 0 1rem;
+      &:focus-visible {
         border-color: $primary-color-2;
         outline: none;
-    }
-    &--error{
+      }
+      &--error {
         border-color: $supporting-color;
-    }
-    @include tablet {
+      }
+      @include tablet {
         height: 2.375rem;
+      }
     }
-  }
-  &__error{
-    color: $supporting-color;
-    font-size: .6875rem;
-    position: relative;
-    @include tablet {
-        font-size: .75rem;
-    }
-    &--icon{
+    &__error {
+      color: $supporting-color;
+      font-size: 0.6875rem;
+      position: relative;
+      @include tablet {
+        font-size: 0.75rem;
+      }
+      &--icon {
         height: 1rem;
         width: 1rem;
         position: relative;
-        top: .1875rem;
+        top: 0.1875rem;
+      }
     }
   }
-}
-&__buttons{
+  &__buttons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,10 +128,10 @@
     padding: 1rem 1.5rem;
     margin-top: 1.5rem;
     @include tablet {
-        justify-content: flex-end;
+      justify-content: flex-end;
     }
-}
-&__cancel{
+  }
+  &__cancel {
     color: $secondary-color-1;
     text-decoration: none;
     display: flex;
@@ -142,23 +144,23 @@
     border-radius: 1.25rem;
     background-color: $primary-color-3;
     &:hover {
-        border: 1px solid $primary-color-2;
-        color: $primary-color-2;
-      }
-    @include tablet {
-        width: auto;
-        padding: .5rem 1rem;
+      border: 1px solid $primary-color-2;
+      color: $primary-color-2;
     }
-}
-&__save{
+    @include tablet {
+      width: auto;
+      padding: 0.5rem 1rem;
+    }
+  }
+  &__save {
     @extend .edit-wh__cancel;
     background-color: $primary-color-2;
     color: $primary-color-3;
     border: none;
     &:hover {
-        background-color: $bg-color-1;
-        color: $primary-color-3;
-        border: none;
-      }
-}
+      background-color: $bg-color-1;
+      color: $primary-color-3;
+      border: none;
+    }
+  }
 }
