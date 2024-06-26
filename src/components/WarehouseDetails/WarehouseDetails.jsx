@@ -7,18 +7,20 @@ const WarehouseDetails = () => {
   return (
     <main className="wh-details__wrapper">
       <div className="wh-details__header">
-        <Link className="wh-details__header-btn--back" to={"/warehouses"}>
-          <img
-            className="wh-details__header-icon--back"
-            src={backArrow}
-            alt="back arrow"
-          />
-        </Link>
-        <h1 className="edit-wh__title">Washington</h1>
-        <button className="edit-wh__header-btn--edit-mobile">
+        <div className="wh-details__header-text-wrapper">
+          <Link className="wh-details__header-btn--back" to={"/warehouses"}>
+            <img
+              className="wh-details__header-icon--back"
+              src={backArrow}
+              alt="back arrow"
+            />
+          </Link>
+          <h1 className="edit-wh__title">Washington</h1>
+        </div>
+        <button className="wh-details__header-btn--edit-mobile">
           <img src={editIcon} alt="Edit icon" />
         </button>
-        <button className="edit-wh__header-btn--edit">
+        <button className="wh-details__header-btn--edit-tablet">
           <img src={editIcon} alt="Edit icon" />
           Edit
         </button>
