@@ -1,13 +1,12 @@
-import "./EditWarehouse.scss";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import "./AddWarehouse.scss"
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import error from "../../assets/icons/error-24px.svg";
 
-const EditWarehouse = () => {
-  const { warehouseId } = useParams();
-  const [warehouse, setWarehouse] = useState(null);
+const AddWarehouse = () => {
+    const navigate = useNavigate();
   const [formData, setFormData] = useState({
     warehouse_name: "",
     address: "",
@@ -28,35 +27,6 @@ const EditWarehouse = () => {
     contact_phone: "",
     contact_email: "",
   });
-
-  useEffect(() => {
-    const fetchWarehouse = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:8080/api/warehouses/${warehouseId}`
-        );
-        setWarehouse(response.data);
-        setFormData({
-          warehouse_name: response.data.warehouse_name,
-          address: response.data.address,
-          city: response.data.city,
-          country: response.data.country,
-          contact_name: response.data.contact_name,
-          contact_position: response.data.contact_position,
-          contact_phone: response.data.contact_phone,
-          contact_email: response.data.contact_email,
-        });
-      } catch (error) {
-        console.error("Error fetching warehouse data:", error);
-      }
-    };
-
-    fetchWarehouse();
-  }, [warehouseId]);
-
-  if (!warehouse) {
-    return <div>Loading...</div>;
-  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -101,33 +71,32 @@ const EditWarehouse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      try {
-        const response = await axios.put(
-          `http://localhost:8080/api/warehouses/${warehouseId}`,
-          formData
-        );
-        alert("Warehouse edited successfully");
+        try {
+            const response = await axios.post(
+              "http://localhost:8080/api/warehouses",
+              formData
+            );
+            alert("Warehouse added successfully");
         navigate("/warehouses");
-
-      } catch (error) {
-        console.error("Error updating warehouse:", error);
-      }
+          } catch (error) {
+            console.error("Error adding warehouse:", error);
+          }
     }
   };
 
   return (
-    <main className="edit-wh">
-      <div className="edit-wh__header">
-        <Link className="edit-wh__back-link" to={"/warehouses"}>
+    <main className="add-wh">
+      <div className="add-wh__header">
+        <Link className="add-wh__back-link" to={"/warehouses"}>
           <img
-            className="edit-wh__back-icon"
+            className="add-wh__back-icon"
             src={backArrow}
             alt="back arrow"
           />
         </Link>
-        <h1 className="edit-wh__title">Edit Warehouse</h1>
+        <h1 className="add-wh__title">Add Warehouse</h1>
       </div>
-      <hr className="edit-wh__divider" />
+      <hr className="add-wh__divider" />
       <form className="form" onSubmit={handleSubmit}>
         <div className="form__sections">
           <div className="form__section">
@@ -161,6 +130,7 @@ const EditWarehouse = () => {
               id="address"
               placeholder="Street Address"
               value={formData.address}
+
               onChange={handleInputChange}
             />
             {errors.address && (
@@ -180,6 +150,7 @@ const EditWarehouse = () => {
               id="city"
               placeholder="City"
               value={formData.city}
+
               onChange={handleInputChange}
             />
             {errors.city && (
@@ -199,6 +170,7 @@ const EditWarehouse = () => {
               id="country"
               placeholder="Country"
               value={formData.country}
+
               onChange={handleInputChange}
             />
             {errors.country && (
@@ -208,7 +180,7 @@ const EditWarehouse = () => {
               </p>
             )}
           </div>
-          <hr className="edit-wh__divider edit-wh__divider--vertical" />
+          <hr className="add-wh__divider add-wh__divider--vertical" />
           <div className="form__section">
             <h2 className="form__subtitle">Contact Details</h2>
             <h3 className="form__label">Contact Name</h3>
@@ -221,6 +193,8 @@ const EditWarehouse = () => {
               id="contact_name"
               placeholder="Contact Name"
               value={formData.contact_name}
+
+
               onChange={handleInputChange}
             />
             {errors.contact_name && (
@@ -239,6 +213,7 @@ const EditWarehouse = () => {
               id="contact_position"
               placeholder="Position"
               value={formData.contact_position}
+
               onChange={handleInputChange}
             />
             {errors.contact_position && (
@@ -258,6 +233,7 @@ const EditWarehouse = () => {
               id="contact_phone"
               placeholder="Phone Number"
               value={formData.contact_phone}
+
               onChange={handleInputChange}
             />
             {errors.contact_phone && (
@@ -277,6 +253,7 @@ const EditWarehouse = () => {
               id="contact_email"
               placeholder="Email"
               value={formData.contact_email}
+
               onChange={handleInputChange}
             />
             {errors.contact_email && (
@@ -287,17 +264,17 @@ const EditWarehouse = () => {
             )}
           </div>
         </div>
-        <div className="edit-wh__buttons">
-          <Link className="edit-wh__cancel" to={"/warehouses"}>
+        <div className="add-wh__buttons">
+          <Link className="add-wh__cancel" to={"/warehouses"}>
             Cancel
           </Link>
-          <button className="edit-wh__save" type="submit">
+          <button className="add-wh__save" type="submit">
             Save
           </button>
         </div>
       </form>
     </main>
-  );
-};
+  )
+}
 
-export default EditWarehouse;
+export default AddWarehouse
