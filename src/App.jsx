@@ -3,12 +3,9 @@ import "./App.scss";
 import Inventory from "./pages/Inventory/Inventory";
 import Warehouses from "./pages/Warehouses/Warehouses";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import Header from "./components/Header/Header";
-import Warehouses from "./pages/Warehouses/Warehouses";
-import Inventory from "./pages/Inventory/Inventory";
+import Footer from "./components/Footer/Footer";
 import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 
 function App() {
