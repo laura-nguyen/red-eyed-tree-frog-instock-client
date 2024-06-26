@@ -27,6 +27,8 @@ const AddWarehouse = () => {
     contact_email: "",
   });
 
+  const navigate = useNavigate();
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
