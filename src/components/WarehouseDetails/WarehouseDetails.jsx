@@ -26,13 +26,13 @@ const WarehouseDetails = ({ warehouseDetails }) => {
               alt="back arrow"
             />
           </Link>
-          <h1 className="edit-wh__title">{warehouse_name}</h1>
+          <h1 className="wh-details__title">{warehouse_name}</h1>
         </div>
         <button className="wh-details__header-btn--edit-mobile">
-          <img src={editIcon} alt="Edit icon" />
+          <img src={editIcon} alt="edit icon" />
         </button>
         <button className="wh-details__header-btn--edit-tablet">
-          <img src={editIcon} alt="Edit icon" />
+          <img src={editIcon} alt="edit icon" />
           Edit
         </button>
       </div>
@@ -40,8 +40,9 @@ const WarehouseDetails = ({ warehouseDetails }) => {
       <div className="wh-details__info">
         <div className="wh-details__address">
           <h4 className="wh-details__label">Warehouse Address:</h4>
-          <p className="wh-details__text wh-details__text--address">
-            {address}, {city}, {country}
+          <p className="wh-details__text">{address},</p>
+          <p className="wh-details__text">
+            {city}, {country}
           </p>
         </div>
         <div className="wh-details__contact">

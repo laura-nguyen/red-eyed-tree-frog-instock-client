@@ -78,12 +78,14 @@
       }
     }
 
-    .edit-wh__title {
+    .wh-details__title {
       font-size: 1.75rem;
       font-weight: 600;
+      line-height: 2.25rem;
 
       @include tablet {
-        // Tablet specific styles
+        font-size: 2rem;
+        line-height: 2.5rem;
       }
     }
   }
@@ -95,14 +97,12 @@
 
     @include tablet {
       flex-direction: row;
-      gap: 1rem;
+      gap: 6rem;
       padding: 2rem;
     }
 
-    &-text--address {
-      @include tablet {
-        max-width: 60%;
-      }
+    @include desktop {
+      gap: 15rem;
     }
   }
 
