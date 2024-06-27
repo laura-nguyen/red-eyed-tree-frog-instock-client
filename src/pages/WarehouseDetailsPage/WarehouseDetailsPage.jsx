@@ -7,6 +7,9 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 const WarehouseDetailsPage = () => {
   const [warehouseDetails, setWarehouseDetails] = useState([]);
+  const [warehouseInventoryDetails, setWarehouseInventoryDetails] = useState(
+    []
+  );
 
   const { warehouseId } = useParams();
 
@@ -15,9 +18,17 @@ const WarehouseDetailsPage = () => {
     setWarehouseDetails(res.data);
   };
 
+  const getWarehouseInventory = async () => {
+    let res = await axios.get(
+      `${API_URL}/warehouses/${warehouseId}/inventories`
+    );
+    setWarehouseInventoryDetails(res.data);
+  };
+
   useEffect(() => {
     getWarehouse();
-  }, []);
+    getWarehouseInventory();
+  }, [warehouseId]);
 
   if (warehouseDetails.length < 1) {
     return <div>Loading...</div>;
@@ -26,7 +37,9 @@ const WarehouseDetailsPage = () => {
   return (
     <main className="wh-details__wrapper">
       <WarehouseDetails warehouseDetails={warehouseDetails} />
-      <WarehouseInventoryList />
+      <WarehouseInventoryList
+        warehouseInventoryDetails={warehouseInventoryDetails}
+      />
     </main>
   );
 };
