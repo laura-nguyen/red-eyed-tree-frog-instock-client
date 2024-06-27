@@ -106,7 +106,7 @@
     }
 
     @include desktop {
-      gap: 15rem;
+      gap: 14rem;
     }
   }
 
@@ -124,6 +124,7 @@
 
     @include desktop {
       gap: 7rem;
+      padding: 0 2.5rem;
     }
   }
 
@@ -159,6 +160,11 @@
       @include tablet {
         flex-direction: column;
         gap: 0;
+        padding-right: 2rem;
+      }
+
+      @include desktop {
+        padding-right: 0;
       }
     }
   }
