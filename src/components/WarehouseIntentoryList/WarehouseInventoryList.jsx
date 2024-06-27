@@ -55,7 +55,7 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
                 to={`/inventories/${item.id}`}
                 className="wh-inv__item--link"
               >
-                {item.item_name}
+                <p>{item.item_name}</p>
                 <img
                   className="cell__icon cell__icon--chevron"
                   src={chevronIcon}
@@ -63,9 +63,11 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
                 />
               </Link>
             </div>
-            <h4 className="wh-inv__subtitle--mobile">Category</h4>
 
-            <div className="wh-inv__category">{item.category}</div>
+            <div className="wh-inv__category">
+              <h4 className="wh-inv__subtitle--mobile">Category</h4>
+              <p>{item.category}</p>
+            </div>
             <div className="wh-inv__status">
               <h4 className="wh-inv__subtitle--mobile">Status</h4>
               <div
@@ -78,8 +80,11 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
                 {item.status}
               </div>
             </div>
-            <h4 className="wh-inv__subtitle--mobile">Qty</h4>
-            <div className="wh-inv__quantity">{item.quantity}</div>
+
+            <div className="wh-inv__quantity">
+              <h4 className="wh-inv__subtitle--mobile">Qty</h4>
+              <p>{item.quantity}</p>
+            </div>
             <div className="wh-inv__actions">
               <img
                 className="cell__icon"

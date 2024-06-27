@@ -111,18 +111,30 @@
   &__actions {
     display: flex;
     justify-content: space-between;
-
     @include tablet {
+      display: flex;
+      justify-content: space-between;
       gap: 1rem;
       justify-content: flex-end;
     }
   }
 
   &__row {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     font-size: 0.8125rem;
     width: 100%;
     padding: 1rem;
     border-top: 0.0625rem solid $secondary-color-2;
+
+    &:last-child {
+      grid-column: 1; // Ensure it spans across all columns
+      display: flex;
+      justify-content: flex-end;
+    }
 
     @include tablet {
       font-size: 0.875rem;
@@ -132,10 +144,12 @@
       padding: 1rem 2rem;
       border-bottom: 0.0625rem solid $secondary-color-2;
     }
+    // hover not working
 
     // &:hover {
     //   background-color: $primary-color-2;
     //   opacity: 7%;
+    //   z-index: -8;
     // }
   }
 
@@ -146,6 +160,7 @@
       font-weight: 600;
       color: $secondary-color-1;
       line-height: 1.125rem;
+      padding-bottom: 0.25rem;
       @include tablet {
         display: none;
       }
