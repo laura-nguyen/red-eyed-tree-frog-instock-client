@@ -8,13 +8,13 @@ const Warehouses = () => {
   };
   return (
     <div>
-    <p>Warehouses</p>
-    <div>
-      <h2>Warehouse 1</h2>
-      <button onClick={() => handleEditClick(1)}>Edit</button>
+      <p>Warehouses</p>
+      <div>
+        <h2>Warehouse 1</h2>
+        <button onClick={() => handleEditClick(1)}>Edit</button>
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
 export default Warehouses;

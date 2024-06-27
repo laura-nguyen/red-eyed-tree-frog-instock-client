@@ -1,9 +1,11 @@
-import "./EditWarehouse.scss";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import error from "../../assets/icons/error-24px.svg";
+
+import "./EditWarehouse.scss";
 
 const EditWarehouse = () => {
   const { warehouseId } = useParams();
@@ -30,11 +32,10 @@ const EditWarehouse = () => {
   });
 
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     const fetchWarehouse = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8080/api/warehouses/${warehouseId}`
-        );
+        const response = await axios.get(`${apiUrl}/warehouses/${warehouseId}`);
         setWarehouse(response.data);
         setFormData({
           warehouse_name: response.data.warehouse_name,
@@ -100,6 +101,7 @@ const EditWarehouse = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (validateForm()) {
       try {
         const response = await axios.put(
@@ -108,7 +110,6 @@ const EditWarehouse = () => {
         );
         alert("Warehouse edited successfully");
         navigate("/warehouses");
-
       } catch (error) {
         console.error("Error updating warehouse:", error);
       }
