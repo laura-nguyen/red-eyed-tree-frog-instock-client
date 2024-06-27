@@ -27,11 +27,11 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
     border-bottom: solid 0.0625rem $secondary-color-2;
 
     @include tablet {
-      padding: 1.5rem 2rem;
+      padding: 2rem 2.5rem;
     }
 
     &-icon {
@@ -103,7 +103,7 @@
       flex-direction: row;
       justify-content: space-evenly;
 
-      padding: 2rem;
+      padding: 1.5rem 2.5rem;
     }
 
     @include desktop {
