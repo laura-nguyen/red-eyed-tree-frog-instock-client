@@ -49,41 +49,41 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
       <div className="wh-inv__items">
         {warehouseInventoryDetails.map((item, index) => (
           <div key={index} className="wh-inv__row">
-            <div className="wh-inv__item">
-              <h4 className="wh-inv__subtitle--mobile">Inventory Item</h4>
-              <Link
-                to={`/inventories/${item.id}`}
-                className="wh-inv__item--link"
-              >
-                <p>{item.item_name}</p>
-                <img
-                  className="cell__icon cell__icon--chevron"
-                  src={chevronIcon}
-                  alt="View Inventory Icon"
-                />
-              </Link>
-            </div>
-
-            <div className="wh-inv__category">
-              <h4 className="wh-inv__subtitle--mobile">Category</h4>
-              <p>{item.category}</p>
-            </div>
-            <div className="wh-inv__status">
-              <h4 className="wh-inv__subtitle--mobile">Status</h4>
-              <div
-                className={
-                  item.status === "In Stock"
-                    ? "tag tag--in-stock"
-                    : "tag tag--out-of-stock"
-                }
-              >
-                {item.status}
+            <div className="wh-inv__info">
+              <div className="wh-inv__item">
+                <h4 className="wh-inv__subtitle--mobile">Inventory Item</h4>
+                <Link
+                  to={`/inventories/${item.id}`}
+                  className="wh-inv__item--link"
+                >
+                  <p>{item.item_name}</p>
+                  <img
+                    className="cell__icon cell__icon--chevron"
+                    src={chevronIcon}
+                    alt="View Inventory Icon"
+                  />
+                </Link>
               </div>
-            </div>
-
-            <div className="wh-inv__quantity">
-              <h4 className="wh-inv__subtitle--mobile">Qty</h4>
-              <p>{item.quantity}</p>
+              <div className="wh-inv__category">
+                <h4 className="wh-inv__subtitle--mobile">Category</h4>
+                <p>{item.category}</p>
+              </div>
+              <div className="wh-inv__status">
+                <h4 className="wh-inv__subtitle--mobile">Status</h4>
+                <div
+                  className={
+                    item.status === "In Stock"
+                      ? "tag tag--in-stock"
+                      : "tag tag--out-of-stock"
+                  }
+                >
+                  {item.status}
+                </div>
+              </div>
+              <div className="wh-inv__quantity">
+                <h4 className="wh-inv__subtitle--mobile">Qty</h4>
+                <p>{item.quantity}</p>
+              </div>
             </div>
             <div className="wh-inv__actions">
               <img
