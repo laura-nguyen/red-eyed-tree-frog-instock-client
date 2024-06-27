@@ -140,11 +140,9 @@
     }
     // hover not working
 
-    // &:hover {
-    //   background-color: $primary-color-2;
-    //   opacity: 7%;
-    //   z-index: -8;
-    // }
+    &:hover {
+      background-color: $hovered-item-color;
+    }
   }
 
   &__info {
