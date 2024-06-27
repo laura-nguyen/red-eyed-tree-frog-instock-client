@@ -2,8 +2,6 @@
 @use "../../styles/partials/variables" as *;
 
 .search {
-  padding: 16px;
-
   @include tablet {
     display: flex;
     flex: 1;
