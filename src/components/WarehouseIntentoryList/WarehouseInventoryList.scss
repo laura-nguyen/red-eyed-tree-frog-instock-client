@@ -16,10 +16,32 @@
     &-subtitles {
       display: flex;
       align-items: center;
-      gap: 0.25rem;
       padding: 0.5rem 0;
+
       &--status {
-        width: 20%;
+        flex: 0.5;
+      }
+
+      &--category {
+        @include tablet {
+          flex: 0.5;
+        }
+        @include desktop {
+          flex: 0.4;
+        }
+      }
+
+      &--item {
+        flex: 0.5;
+      }
+
+      &--quantity {
+        flex: 0.5;
+
+        @include tablet {
+          padding: 0;
+        }
+        padding-right: 1.25rem;
       }
     }
     &-label {
@@ -45,7 +67,7 @@
   }
 
   &__item {
-    flex: 2;
+    flex: 0.5;
     text-align: left;
 
     &--link {
@@ -61,22 +83,26 @@
   }
 
   &__category {
-    flex: 1;
+    @include tablet {
+      flex: 0.5;
+    }
+
+    @include desktop {
+      flex: 0.4;
+    }
   }
 
   &__status {
-    flex: 2;
-    padding-left: 4rem;
+    flex: 0.5;
   }
 
   &__quantity {
-    flex: 2;
+    flex: 0.5;
   }
 
   &__actions {
-    flex: 1;
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     justify-content: flex-end;
   }
 

@@ -22,6 +22,12 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
             key={index}
             className={`wh-inv__header-subtitles ${
               title === "Status" ? "wh-inv__header-subtitles--status" : ""
+            } ${
+              title === "Category" ? "wh-inv__header-subtitles--category" : ""
+            }  ${
+              title === "Inventory Item" ? "wh-inv__header-subtitles--item" : ""
+            }  ${
+              title === "Quantity" ? "wh-inv__header-subtitles--quantity" : ""
             }`}
           >
             <h4 className="wh-inv__header-label">{title}</h4>
@@ -55,12 +61,16 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
               </Link>
             </div>
             <div className="wh-inv__category">{item.category}</div>
-            <div
-              className={`wh-inv__status ${
-                item.status === "In Stock" ? "in-stock" : "out-of-stock"
-              }`}
-            >
-              {item.status}
+            <div className="wh-inv__status">
+              <div
+                className={
+                  item.status === "In Stock"
+                    ? "tag tag--in-stock"
+                    : "tag tag--out-of-stock"
+                }
+              >
+                {item.status}
+              </div>
             </div>
             <div className="wh-inv__quantity">{item.quantity}</div>
             <div className="wh-inv__actions">
