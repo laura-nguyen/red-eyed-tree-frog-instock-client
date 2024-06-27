@@ -99,14 +99,14 @@
         outline: none;
       }
       &--error {
-        border-color: $supporting-color;
+        border-color: $supporting-color-2;
       }
       @include tablet {
         height: 2.375rem;
       }
     }
     &__error {
-      color: $supporting-color;
+      color: $supporting-color-2;
       font-size: 0.6875rem;
       position: relative;
       @include tablet {
