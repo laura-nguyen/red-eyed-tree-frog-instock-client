@@ -132,6 +132,8 @@
     text-transform: uppercase;
     line-height: 1rem;
     padding-bottom: 0.25rem;
+    color: $secondary-color-1;
+    font-weight: 600;
 
     @include tablet {
       font-size: 0.75rem;

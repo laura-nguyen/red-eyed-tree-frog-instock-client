@@ -94,7 +94,7 @@
     }
   }
 
-  &__info {
+  &__content {
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -110,7 +110,7 @@
     }
   }
 
-  &__contact {
+  &__content-right {
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -132,6 +132,8 @@
     text-transform: uppercase;
     line-height: 1rem;
     padding-bottom: 0.25rem;
+    color: $secondary-color-1;
+    font-weight: 600;
 
     @include tablet {
       font-size: 0.75rem;

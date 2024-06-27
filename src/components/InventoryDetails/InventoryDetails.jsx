@@ -29,24 +29,37 @@ const InventoryDetails = ({ inventoryDetails }) => {
         </button>
       </div>
 
-      <div className="inv-details__info">
-        <div className="inv-details__address">
-          <h4 className="inv-details__label">Inventory Address:</h4>
-          <div className="inv-details__text--address">
-            <p className="inv-details__text">test</p>
-            <p className="inv-details__text">test</p>
+      <div className="inv-details__content">
+        <div className="inv-details__content-left">
+          <div className="inv-details__address">
+            <h4 className="inv-details__label">Item Description:</h4>
+            <p className="inv-details__text">{description}</p>
+          </div>
+          <div className="inv-details__address">
+            <h4 className="inv-details__label">Category:</h4>
+            <p className="inv-details__text">{category}</p>
           </div>
         </div>
-        <div className="inv-details__contact">
+        <div className="inv-details__content-right">
           <div className="inv-details__contact-name">
-            <h4 className="inv-details__label">test</h4>
-            <p className="inv-details__text">test</p>
-            <p className="inv-details__text">test</p>
+            <h4 className="inv-details__label">Status</h4>
+            <p
+              className={
+                status === "In Stock"
+                  ? "tag tag--in-stock"
+                  : "tag tag--out-of-stock"
+              }
+            >
+              {status}
+            </p>
           </div>
           <div className="inv-details__contact-info">
-            <h4 className="inv-details__label">test</h4>
-            <p className="inv-details__text">test</p>
-            <p className="inv-details__text">test</p>
+            <h4 className="inv-details__label">Quantity</h4>
+            <p className="inv-details__text">{quantity}</p>
+          </div>
+          <div className="inv-details__contact-info">
+            <h4 className="inv-details__label">Warehouse</h4>
+            <p className="inv-details__text">{warehouse_name}</p>
           </div>
         </div>
       </div>
