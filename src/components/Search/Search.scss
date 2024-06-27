@@ -1,0 +1,42 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.search {
+  padding: 16px;
+
+  @include tablet {
+    display: flex;
+    flex: 1;
+    gap: 1rem;
+    justify-content: end;
+    z-index: 1;
+    align-items: center;
+  }
+
+  &__control {
+    position: relative;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 55%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+
+  &__input {
+    @include tablet {
+      height: 2.375rem;
+      width: 11.5625rem;
+    }
+
+    @include desktop {
+      width: 18.75rem;
+    }
+  }
+}

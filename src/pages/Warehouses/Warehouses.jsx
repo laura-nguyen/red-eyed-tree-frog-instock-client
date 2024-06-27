@@ -1,3 +1,5 @@
+import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
+
 import { useNavigate } from "react-router-dom";
 
 const Warehouses = () => {
@@ -8,17 +10,14 @@ const Warehouses = () => {
   };
   return (
     <div>
-    <h1>Warehouses</h1>
+    <p>Warehouses</p>
     <div>
       <h2>Warehouse 1</h2>
       <button onClick={() => handleEditClick(1)}>Edit</button>
     </div>
-    <div>
-      <h2>Warehouse 2</h2>
-      <button onClick={() => handleEditClick(2)}>Edit</button>
+    <WarehouseDetails />
     </div>
-  </div>
   )
 }
 
-export default Warehouses
+export default Warehouses;
