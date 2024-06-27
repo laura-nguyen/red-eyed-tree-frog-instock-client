@@ -13,7 +13,6 @@ const InventoryDetailsPage = () => {
     try {
       let res = await axios.get(`${API_URL}/inventories/${inventoryId}`);
       setInventoryDetails(res.data);
-      console.log(res.data);
     } catch (error) {
       console.error(error);
     }
