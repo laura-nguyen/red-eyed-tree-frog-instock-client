@@ -4,9 +4,9 @@ import Inventory from "./pages/Inventory/Inventory";
 import Warehouses from "./pages/Warehouses/Warehouses";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
+import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 
 function App() {
   return (
@@ -19,7 +19,10 @@ function App() {
           element={<WarehouseDetailsPage />}
         />
         <Route path="/inventories" element={<Inventory />} />
-        <Route path="/inventory/:id" element={<InventoryDetails />} />
+        <Route
+          path="/inventories/:inventoryId"
+          element={<InventoryDetailsPage />}
+        />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />

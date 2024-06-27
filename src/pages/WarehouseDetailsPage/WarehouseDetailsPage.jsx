@@ -10,8 +10,12 @@ const WarehouseDetailsPage = () => {
   const { warehouseId } = useParams();
 
   const getWarehouse = async () => {
-    let res = await axios.get(`${API_URL}/warehouses/${warehouseId}`);
-    setWarehouseDetails(res.data);
+    try {
+      let res = await axios.get(`${API_URL}/warehouses/${warehouseId}`);
+      setWarehouseDetails(res.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
