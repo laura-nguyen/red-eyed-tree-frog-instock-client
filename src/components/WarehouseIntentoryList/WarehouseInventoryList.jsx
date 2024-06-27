@@ -2,6 +2,7 @@ import sortIcon from "../../assets/icons/sort-24px.svg";
 import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import { Link } from "react-router-dom";
 import "./WarehouseInventoryList.scss";
 
 const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
@@ -40,7 +41,19 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
       <div className="wh-inv__items">
         {warehouseInventoryDetails.map((item, index) => (
           <div key={index} className="wh-inv__row">
-            <div className="wh-inv__item">{item.item_name}</div>
+            <div className="wh-inv__item">
+              <Link
+                to={`/inventories/${item.id}`}
+                className="wh-inv__item--link"
+              >
+                {item.item_name}
+                <img
+                  className="cell__icon cell__icon--chevron"
+                  src={chevronIcon}
+                  alt="View Inventory Icon"
+                />
+              </Link>
+            </div>
             <div className="wh-inv__category">{item.category}</div>
             <div
               className={`wh-inv__status ${
