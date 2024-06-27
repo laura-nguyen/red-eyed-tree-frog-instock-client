@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
@@ -6,6 +6,11 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import "./WarehouseItemRow.scss";
 
 const WarehouseItemRow = ({ warehouses }) => {
+    const navigate = useNavigate();
+
+    const handleEditClick = (id) => {
+      navigate(`/warehouses/edit/${id}`);
+    };
   return (
     <>
       {warehouses.map((warehouses) => (
@@ -51,7 +56,7 @@ const WarehouseItemRow = ({ warehouses }) => {
                 src={deleteIcon}
                 alt="Delete warehouse icon"
               />
-              <img
+              <img onClick={() => handleEditClick(1)}
                 className="cell__icon"
                 src={editIcon}
                 alt="Edit warehouse icon"
