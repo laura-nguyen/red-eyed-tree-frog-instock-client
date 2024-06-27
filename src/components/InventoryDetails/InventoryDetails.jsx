@@ -31,17 +31,17 @@ const InventoryDetails = ({ inventoryDetails }) => {
 
       <div className="inv-details__content">
         <div className="inv-details__content-left">
-          <div className="inv-details__address">
+          <div className="inv-details__description">
             <h4 className="inv-details__label">Item Description:</h4>
             <p className="inv-details__text">{description}</p>
           </div>
-          <div className="inv-details__address">
+          <div className="inv-details__category">
             <h4 className="inv-details__label">Category:</h4>
             <p className="inv-details__text">{category}</p>
           </div>
         </div>
         <div className="inv-details__content-right">
-          <div className="inv-details__contact-name">
+          <div className="inv-details__status">
             <h4 className="inv-details__label">Status</h4>
             <p
               className={
@@ -53,11 +53,11 @@ const InventoryDetails = ({ inventoryDetails }) => {
               {status}
             </p>
           </div>
-          <div className="inv-details__contact-info">
+          <div className="inv-details__quantity">
             <h4 className="inv-details__label">Quantity</h4>
             <p className="inv-details__text">{quantity}</p>
           </div>
-          <div className="inv-details__contact-info">
+          <div className="inv-details__warehouse">
             <h4 className="inv-details__label">Warehouse</h4>
             <p className="inv-details__text">{warehouse_name}</p>
           </div>
