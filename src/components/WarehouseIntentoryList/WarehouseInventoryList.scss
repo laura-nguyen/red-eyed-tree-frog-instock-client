@@ -36,4 +36,33 @@
       height: 1rem;
     }
   }
+
+  &__items {
+    @include tablet {
+      padding: 0 2rem;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+
+    @include tablet {
+      padding: 1rem 0;
+    }
+
+    & > div {
+      flex: 1;
+      text-align: left;
+
+      &.wh-inv__actions {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: flex-end;
+      }
+    }
+  }
 }
