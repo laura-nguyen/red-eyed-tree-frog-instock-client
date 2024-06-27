@@ -1,5 +1,6 @@
 import Search from "../../components/Search/Search";
 import "./Warehouses.scss";
+import WarehousesList from '../../components/WarehouseList/WarehouseList'
 
 const Warehouses = () => {
   return (
@@ -10,7 +11,7 @@ const Warehouses = () => {
           <Search />
         </div>
         <hr className="divider divider--hide-big" />
-        {/* <WarehousesList /> */}
+        <WarehousesList />
       </section>
     </main>
   );
