@@ -1,9 +1,11 @@
-import "./AddWarehouse.scss"
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import error from "../../assets/icons/error-24px.svg";
+
+import "./AddWarehouse.scss";
 
 const AddWarehouse = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +30,7 @@ const AddWarehouse = () => {
   });
 
   const navigate = useNavigate();
-  
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -69,19 +71,19 @@ const AddWarehouse = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (validateForm()) {
-        try {
-            const response = await axios.post(
-              "http://localhost:8080/api/warehouses",
-              formData
-            );
-            alert("Warehouse added successfully");
+      try {
+        const response = await axios.post(`${apiUrl}/warehouses`, formData);
+        alert("Warehouse added successfully");
         navigate("/warehouses");
-          } catch (error) {
-            console.error("Error adding warehouse:", error);
-          }
+      } catch (error) {
+        console.error("Error adding warehouse:", error);
+      }
     }
   };
 
@@ -89,11 +91,7 @@ const AddWarehouse = () => {
     <main className="add-wh">
       <div className="add-wh__header">
         <Link className="add-wh__back-link" to={"/warehouses"}>
-          <img
-            className="add-wh__back-icon"
-            src={backArrow}
-            alt="back arrow"
-          />
+          <img className="add-wh__back-icon" src={backArrow} alt="back arrow" />
         </Link>
         <h1 className="add-wh__title">Add Warehouse</h1>
       </div>
@@ -131,7 +129,6 @@ const AddWarehouse = () => {
               id="address"
               placeholder="Street Address"
               value={formData.address}
-
               onChange={handleInputChange}
             />
             {errors.address && (
@@ -151,7 +148,6 @@ const AddWarehouse = () => {
               id="city"
               placeholder="City"
               value={formData.city}
-
               onChange={handleInputChange}
             />
             {errors.city && (
@@ -171,7 +167,6 @@ const AddWarehouse = () => {
               id="country"
               placeholder="Country"
               value={formData.country}
-
               onChange={handleInputChange}
             />
             {errors.country && (
@@ -194,8 +189,6 @@ const AddWarehouse = () => {
               id="contact_name"
               placeholder="Contact Name"
               value={formData.contact_name}
-
-
               onChange={handleInputChange}
             />
             {errors.contact_name && (
@@ -214,7 +207,6 @@ const AddWarehouse = () => {
               id="contact_position"
               placeholder="Position"
               value={formData.contact_position}
-
               onChange={handleInputChange}
             />
             {errors.contact_position && (
@@ -234,7 +226,6 @@ const AddWarehouse = () => {
               id="contact_phone"
               placeholder="Phone Number"
               value={formData.contact_phone}
-
               onChange={handleInputChange}
             />
             {errors.contact_phone && (
@@ -254,7 +245,6 @@ const AddWarehouse = () => {
               id="contact_email"
               placeholder="Email"
               value={formData.contact_email}
-
               onChange={handleInputChange}
             />
             {errors.contact_email && (
@@ -275,7 +265,7 @@ const AddWarehouse = () => {
         </div>
       </form>
     </main>
-  )
-}
+  );
+};
 
-export default AddWarehouse
+export default AddWarehouse;
