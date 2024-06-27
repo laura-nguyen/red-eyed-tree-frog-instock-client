@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./Search.scss";
 import searchIcon from "../../assets/icons/search-24px.svg";
 

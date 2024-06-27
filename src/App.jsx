@@ -16,6 +16,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
+        <Route path="/" element={<Warehouses />} />
         <Route path="/warehouses" element={<Warehouses />} />
         <Route
           path="/warehouses/:warehouseId"
