@@ -67,9 +67,9 @@
   }
 
   &__items {
-    padding: 1rem;
+    padding: 1rem 0;
     @include tablet {
-      padding: 0 2rem;
+      padding: 0;
       font-size: 0.875rem;
     }
   }
@@ -119,21 +119,24 @@
   }
 
   &__row {
-    display: grid;
     font-size: 0.8125rem;
-
     width: 100%;
-    padding: 0.5rem 0;
+    padding: 1rem;
     border-top: 0.0625rem solid $secondary-color-2;
 
     @include tablet {
       font-size: 0.875rem;
       display: flex;
       justify-content: space-between;
-      padding: 1rem 0;
       border-top: 0;
+      padding: 1rem 2rem;
       border-bottom: 0.0625rem solid $secondary-color-2;
     }
+
+    // &:hover {
+    //   background-color: $primary-color-2;
+    //   opacity: 7%;
+    // }
   }
 
   &__subtitle {
