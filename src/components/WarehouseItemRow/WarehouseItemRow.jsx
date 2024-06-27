@@ -6,6 +6,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import "./WarehouseItemRow.scss";
 
 const WarehouseItemRow = ({ warehouses }) => {
+    console.log(warehouses);
     const navigate = useNavigate();
 
     const handleEditClick = (id) => {
@@ -35,7 +36,7 @@ const WarehouseItemRow = ({ warehouses }) => {
                 </div>
                 <div className="cell cell--category">
                   <h4 className="cell__heading">ADDRESS</h4>
-                  <p className="p-medium">{warehouses.address}</p>
+                  <p className="p-medium">{warehouses.address}, {warehouses.country}</p>
                 </div>
               </div>
               <div className="warehouse-list__right">
