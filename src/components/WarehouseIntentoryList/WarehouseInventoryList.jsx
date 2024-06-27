@@ -28,6 +28,8 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
               title === "Inventory Item" ? "wh-inv__header-subtitles--item" : ""
             }  ${
               title === "Quantity" ? "wh-inv__header-subtitles--quantity" : ""
+            } ${
+              title === "Actions" ? "wh-inv__header-subtitles--actions" : ""
             }`}
           >
             <h4 className="wh-inv__header-label">{title}</h4>
@@ -48,6 +50,7 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
         {warehouseInventoryDetails.map((item, index) => (
           <div key={index} className="wh-inv__row">
             <div className="wh-inv__item">
+              <h4 className="wh-inv__subtitle--mobile">Inventory Item</h4>
               <Link
                 to={`/inventories/${item.id}`}
                 className="wh-inv__item--link"
@@ -60,8 +63,11 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
                 />
               </Link>
             </div>
+            <h4 className="wh-inv__subtitle--mobile">Category</h4>
+
             <div className="wh-inv__category">{item.category}</div>
             <div className="wh-inv__status">
+              <h4 className="wh-inv__subtitle--mobile">Status</h4>
               <div
                 className={
                   item.status === "In Stock"
@@ -72,6 +78,7 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
                 {item.status}
               </div>
             </div>
+            <h4 className="wh-inv__subtitle--mobile">Qty</h4>
             <div className="wh-inv__quantity">{item.quantity}</div>
             <div className="wh-inv__actions">
               <img
