@@ -23,7 +23,7 @@ const WarehouseItemRow = ({ warehouses }) => {
                       <img
                         className="cell__icon cell__icon--chevron"
                         src={chevronIcon}
-                        alt="View warehouse Icon"
+                        alt="View warehouse icon"
                       />
                     </div>
                   </Link>
@@ -49,12 +49,12 @@ const WarehouseItemRow = ({ warehouses }) => {
               <img
                 className="cell__icon"
                 src={deleteIcon}
-                alt="Delete warehouse Icon"
+                alt="Delete warehouse icon"
               />
               <img
                 className="cell__icon"
                 src={editIcon}
-                alt="Edit warehouse Icon"
+                alt="Edit warehouse icon"
               />
             </div>
           </article>
