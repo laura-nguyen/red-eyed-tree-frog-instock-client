@@ -1,5 +1,3 @@
-import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
-
 import { useNavigate } from "react-router-dom";
 
 const Warehouses = () => {
@@ -15,7 +13,6 @@ const Warehouses = () => {
       <h2>Warehouse 1</h2>
       <button onClick={() => handleEditClick(1)}>Edit</button>
     </div>
-    <WarehouseDetails />
     </div>
   )
 }
