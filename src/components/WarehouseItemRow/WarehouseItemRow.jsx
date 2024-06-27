@@ -44,7 +44,7 @@ const WarehouseItemRow = ({ warehouses }) => {
                   <p className="p-medium">{warehouses.contact_name}</p>
                 </div>
                 <div className="cell cell--qty">
-                  <h4 className="cell__heading">CONTACT Information</h4>
+                  <h4 className="cell__heading">CONTACT INFORMATION</h4>
                   <p className="p-medium">{warehouses.contact_phone}</p>
                   <p className="p-medium">{warehouses.contact_email}</p>
                 </div>
