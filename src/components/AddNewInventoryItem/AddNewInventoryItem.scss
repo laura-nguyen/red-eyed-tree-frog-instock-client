@@ -1,0 +1,192 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.add-inventory {
+  position: relative;
+  top: -3.75rem;
+  margin: 0 1rem;
+  z-index: 1;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 $box-shadow-color;
+
+  @include tablet {
+    top: -5.375rem;
+    margin: 0 2rem;
+  }
+
+  @include desktop {
+    max-width: 63.75rem;
+    margin: auto;
+  }
+
+  &__title-bar {
+    padding: 1.5rem 1rem 1rem 1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    @include desktop {
+      padding: 1rem 2rem;
+      align-items: end;
+    }
+  }
+
+  &__heading {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.74rem;
+  }
+
+  &__buttons {
+    background-color: $table-header-bg-color;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+
+    @include tablet {
+      justify-content: end;
+      padding: 1rem 2.5rem;
+    }
+  }
+}
+
+.form {
+  &__sections {
+    @include tablet {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      padding: 1.5rem 0;
+    }
+  }
+
+  &__section {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+
+    @include tablet {
+      width: 100%;
+      padding: 0 2rem;
+    }
+
+    &--left {
+      @include tablet {
+        border-right: 1px solid $secondary-color-2;
+      }
+    }
+
+    @include desktop {
+      padding: 0 2.5rem;
+    }
+  }
+
+  &__input {
+    margin-top: 0;
+
+    &--quantity {
+      @include desktop {
+        width: 55%;
+      }
+    }
+  }
+
+  &__textarea {
+    margin-top: 0;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    padding: 0rem 0 0.5rem;
+  }
+
+  &__label {
+    font-weight: 600;
+    padding: 1rem 0 0.25rem;
+  }
+
+  &__select {
+    margin-top: 0;
+    padding-right: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: none;
+  }
+
+  &__radio-control {
+    display: flex;
+  }
+
+  &__radio-wrapper {
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+
+  &__radio-label {
+    margin-left: 0.5rem;
+  }
+}
+
+.status-radio {
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  margin-top: 0;
+  border: 1px solid $secondary-color-2;
+  cursor: pointer;
+
+  & + label {
+    color: $secondary-color-2;
+  }
+
+  &:checked + label {
+    color: $primary-color-1;
+  }
+}
+
+.select-wrapper {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("../../assets/icons/arrow_drop_down-24px.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.link {
+  &--cancel {
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+}
