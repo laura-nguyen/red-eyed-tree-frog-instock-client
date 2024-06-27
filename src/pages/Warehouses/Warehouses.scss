@@ -3,21 +3,22 @@
 
 .main {
   position: relative;
-  height: 100vh;
+  height: 100%;
   background-color: $bg-color-2;
 }
 
-.warehouse {
-  position: absolute;
-  top: -60px;
-  left: 16px;
+.warehouses {
+  position: relative;
+  top: -3.75rem;
+  margin: 0 1rem;
   z-index: 1;
   background: white;
-  right: 16px;
-  box-shadow: 0 2px 5px $box-shadow-color;
+  border-radius: 4px;
+  box-shadow: 0px 2px 5px 0px $box-shadow-color;
 
   @include tablet {
-    top: -86px;
+    top: -5.375rem;
+    margin: 0 2rem;
   }
 
   @include desktop {
@@ -27,44 +28,19 @@
 
   &__title-bar {
     @include tablet {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      width: 100%;
+      padding: 0 1.5rem;
+    }
+
+    @include desktop {
+      padding: 0 1.5rem;
     }
   }
 
   &__heading {
-    padding: 24px 16px 16px 16px;
+    padding: 1.5rem 1rem 1rem 1rem;
     font-weight: 600;
     font-style: normal;
-
-    @include tablet {
-      flex: 1;
-    }
   }
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    padding-left: 1rem;
-}
-
-th, td {
-    padding: 16px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-}
-
-th {
-    background-color: white;
-}
-
-th:hover {
-    background-color: #ddd;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
 }

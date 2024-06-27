@@ -5,43 +5,38 @@
   padding: 16px;
 
   @include tablet {
-    display: inline-flex;
     display: flex;
     flex: 1;
+    gap: 1rem;
     justify-content: end;
-  }
-
-  &__formSec {
-    display: inline-flex;
-    gap: 16px;
-
+    z-index: 1;
+    align-items: center;
   }
 
   &__control {
     position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 
     @include tablet {
       margin-bottom: 0;
-      background: $primary-color-2;
     }
   }
 
   &__icon {
     position: absolute;
-    top: 50%;
-    right: 16px;
+    top: 55%;
+    right: 1rem;
     transform: translateY(-50%);
   }
 
   &__input {
     @include tablet {
-      height: 38px;
-      width: 185px;
+      height: 2.375rem;
+      width: 11.5625rem;
     }
 
     @include desktop {
-      width: 300px;
+      width: 18.75rem;
     }
   }
 }
