@@ -16,7 +16,7 @@ const WarehouseDetails = ({ warehouseDetails }) => {
   } = warehouseDetails;
 
   return (
-    <>
+    <section>
       <div className="wh-details__header">
         <div className="wh-details__header-text-wrapper">
           <Link className="wh-details__header-btn--back" to={"/warehouses"}>
@@ -60,7 +60,7 @@ const WarehouseDetails = ({ warehouseDetails }) => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

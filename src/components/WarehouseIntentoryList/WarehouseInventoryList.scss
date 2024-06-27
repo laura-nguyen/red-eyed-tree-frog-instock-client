@@ -1,0 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.wh-inv {
+  &__header {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      background-color: $bg-color-2;
+      padding: 0 2rem;
+    }
+
+    &-subtitles {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.5rem 0;
+      &--status {
+        width: 20%;
+      }
+    }
+    &-label {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $secondary-color-1;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+    }
+  }
+  &__icon {
+    &--sort {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
