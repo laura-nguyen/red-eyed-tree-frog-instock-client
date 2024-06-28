@@ -1,4 +1,3 @@
-
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/globals' as *;
@@ -25,9 +24,10 @@
     height: 100vh;
     @include tablet {
       position: absolute;
-      top: 185px;
+      top: 11.5625rem;
       width: 42rem;
       height: 16.375rem;
+      padding-left: 4rem;
     }
   }
   &__iconDiv {

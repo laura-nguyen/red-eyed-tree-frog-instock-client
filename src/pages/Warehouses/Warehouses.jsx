@@ -15,19 +15,37 @@ const Warehouses = () => {
   const [deleteWareHouseId, setDeleteWareHouseId] = useState("");
   const navigate = useNavigate();
   const deleteWarehouseEndPoint = `${API_URL}/warehouses/`;
+  const [warehouseList, setWarehouse] = useState([]);
+  const getWarehouseListEndPoint = `${API_URL}/warehouses`;
+
+  const getwarehouseList = async () => {
+    try {
+      const result = await axios.get(getWarehouseListEndPoint);
+      const warehouseList = result.data;
+      setWarehouse(warehouseList);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    getwarehouseList();
+  }, [deleteWareHouseId]);
 
   const closePopup = () => {
     setIsPopupVisible(false);
   };
-  const DeleteWarehouse = async () => {
+
+  const DeleteWarehouse = async (e) => {
+    e.preventDefault();
     try {
       console.log(`${API_URL}/warehouses/${deleteWareHouseId}`);
       console.log({ deleteWareHouseId });
       const result = await axios.delete(
         `${API_URL}/warehouses/${deleteWareHouseId}`
       );
-      const warehouseList = result.data;
-      // setWarehouse(warehouseList);
+      setWarehouse(
+        warehouseList.filter((item) => item.id !== deleteWareHouseId)
+      );
     } catch (e) {
       console.log(e);
     }
@@ -47,10 +65,11 @@ const Warehouses = () => {
     setIsPopupVisible(false);
   };
 
-  const handleDelete = () => {
-    DeleteWarehouse();
+  const handleDelete = (e) => {
+    DeleteWarehouse(e);
     hidePopup();
   };
+
   return (
     <>
       <main className="main">
@@ -68,7 +87,10 @@ const Warehouses = () => {
               </button>
             </div>
             <hr className="divider divider--hide-big" />
-            <WarehousesList openModal={showPopup} />
+            <WarehousesList
+              openModal={showPopup}
+              warehouseList={warehouseList}
+            />
             {isPopupVisible && (
               <Popup
                 handleDelete={handleDelete}
