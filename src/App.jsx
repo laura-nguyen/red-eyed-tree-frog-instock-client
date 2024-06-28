@@ -1,12 +1,14 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Warehouses from "./pages/Warehouses/Warehouses";
+import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import Inventory from "./pages/Inventory/Inventory";
-import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
+import AddInventory from "./components/AddInventory/AddInventory";
+import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
+import Footer from "./components/Footer/Footer";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
-import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
-import Warehouses from "./pages/Warehouses/Warehouses";
 
 import "./App.scss";
 
@@ -27,7 +29,11 @@ function App() {
         <Route path="/warehouses/add" element={<AddWarehouse />} />
 
         <Route path="/inventories" element={<Inventory />} />
-        <Route path="/inventory/:id" element={<InventoryDetails />} />
+        <Route path="/inventories/add" element={<AddInventory />} />
+        <Route
+          path="/inventories/:inventoryId"
+          element={<InventoryDetailsPage />}
+        />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

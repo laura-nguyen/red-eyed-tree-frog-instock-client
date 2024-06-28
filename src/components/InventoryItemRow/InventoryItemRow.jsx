@@ -15,7 +15,7 @@ const InventoryItemRow = ({ inventories }) => {
               <div className="inventory-list__left">
                 <div className="cell">
                   <h4 className="cell__heading">INVENTORY ITEM</h4>
-                  <Link to={`/inventory/${inventory.id}`}>
+                  <Link to={`/inventories/${inventory.id}`}>
                     <div className="cell__link">
                       <p className="cell__link-text p-medium">
                         {inventory.item_name}

@@ -21,7 +21,7 @@ const WarehouseItemRow = ({ warehouses, openModal, hidePopup }) => {
               <div className="warehouse-list__left">
                 <div className="cell">
                   <h4 className="cell__heading">WAREHOUSE</h4>
-                  <Link to={`/warehouse/${warehouses.id}`}>
+                  <Link to={`/warehouses/${warehouses.id}`}>
                     <div className="cell__link">
                       <p className="cell__link-text p-medium">
                         {warehouses.warehouse_name}
