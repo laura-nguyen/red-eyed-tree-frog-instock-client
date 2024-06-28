@@ -159,14 +159,14 @@
     padding: 4px;
     margin-right: 0.5rem;
     background-clip: content-box;
-    border: 2px solid $secondary-color-2;
+    border: 1px solid $secondary-color-2;
     background-color: $primary-color-3;
     border-radius: 50%;
     cursor: pointer;
   }
 
   &:checked + .form__radio-label:before {
-    border: 2px solid $primary-color-2;
+    border: 1px solid $primary-color-2;
     background-color: $primary-color-2;
   }
 
