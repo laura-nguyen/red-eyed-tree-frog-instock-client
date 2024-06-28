@@ -43,7 +43,11 @@ const InventoryList = () => {
           <div
             key={index}
             className={`header-cell ${
+              title === "INVENTORY ITEM" ? "header-cell--item" : ""
+            } ${title === "CATEGORY" ? "header-cell--category" : ""} ${
               title === "STATUS" ? "header-cell--status" : ""
+            } ${title === "QTY" ? "header-cell--quantity" : ""} ${
+              title === "WAREHOUSE" ? "header-cell--warehouse" : ""
             }`}
           >
             <h4 className="header-cell__title">{title}</h4>

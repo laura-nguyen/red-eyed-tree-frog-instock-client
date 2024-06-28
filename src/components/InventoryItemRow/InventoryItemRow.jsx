@@ -69,7 +69,6 @@ const InventoryItemRow = ({ inventories }) => {
               />
             </div>
           </article>
-          <hr className="divider" />
         </div>
       ))}
     </>

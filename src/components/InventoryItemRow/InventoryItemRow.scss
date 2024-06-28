@@ -8,24 +8,38 @@
 
   &--status {
     @include tablet {
-      margin-left: -3.7rem !important;
+      margin-left: -4.5rem !important;
+      padding-right: 1rem !important;
+    }
+    @include desktop {
+      margin-left: -4.5rem !important;
+      padding-right: 1rem !important;
     }
   }
 
   &--category {
     @include tablet {
-      margin-left: -2rem !important;
+      margin-left: -4rem !important;
+    }
+    @include desktop {
+      margin-left: -4rem !important;
     }
   }
 
   &--qty {
     @include tablet {
-      margin-left: -0.5rem;
+      margin-left: 0.5rem !important;
+    }
+    @include desktop {
+      margin-left: 0.5rem !important;
     }
   }
 
   &--warehouse {
     @include tablet {
+      margin-left: -2rem;
+    }
+    @include desktop {
       margin-left: -2rem;
     }
   }

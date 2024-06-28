@@ -14,7 +14,6 @@ const Inventory = () => {
             <button className="button button--search">+ Add New Item</button>
           </NavLink>
         </div>
-        <hr className="divider divider--hide-big" />
         <InventoryList />
       </section>
     </main>
