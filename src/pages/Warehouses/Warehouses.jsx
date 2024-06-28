@@ -38,8 +38,6 @@ const Warehouses = () => {
   const DeleteWarehouse = async (e) => {
     e.preventDefault();
     try {
-      console.log(`${API_URL}/warehouses/${deleteWareHouseId}`);
-      console.log({ deleteWareHouseId });
       const result = await axios.delete(
         `${API_URL}/warehouses/${deleteWareHouseId}`
       );
