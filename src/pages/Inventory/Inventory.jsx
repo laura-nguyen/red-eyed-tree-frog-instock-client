@@ -33,8 +33,6 @@ const Inventory = () => {
   const DeleteInventory = async (e) => {
     e.preventDefault();
     try {
-      console.log(`${API_URL}/inventories/${deleteInventoryId}`);
-      console.log({ deleteInventoryId });
       const result = await axios.delete(
         `${API_URL}/inventories/${deleteInventoryId}`
       );
