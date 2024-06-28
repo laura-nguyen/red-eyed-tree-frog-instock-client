@@ -5,7 +5,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 
 import "./InventoryItemRow.scss";
 
-const InventoryItemRow = ({ inventories }) => {
+const InventoryItemRow = ({ inventories, openModal }) => {
   return (
     <>
       {inventories.map((inventory) => (
@@ -58,6 +58,7 @@ const InventoryItemRow = ({ inventories }) => {
             </div>
             <div className="inventory-list__actions">
               <img
+                onClick={() => openModal(inventory.item_name, inventory.id)}
                 className="cell__icon"
                 src={deleteIcon}
                 alt="Delete Inventory Icon"
