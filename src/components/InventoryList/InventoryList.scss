@@ -127,6 +127,10 @@
   &__link-text {
     color: $primary-color-2;
     font-weight: 600;
+
+    @include tablet {
+      flex: 0;
+    }
   }
 
   &--actions {
@@ -136,9 +140,11 @@
 
     @include tablet {
       flex: 0.6;
-      display: block;
-      justify-content: unset;
+      justify-content: normal;
+      gap: 0.5rem;
       padding: 0.5rem 0 0.5rem 1rem;
+      display: flex;
+      align-items: center;
     }
   }
 
