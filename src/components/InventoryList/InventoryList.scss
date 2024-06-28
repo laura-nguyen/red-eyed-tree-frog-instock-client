@@ -1,6 +1,14 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+.inventory-list > .p-medium {
+  color: $primary-color-1;
+}
+
+.inventory-list:last-child > hr:last-child {
+  display: none;
+}
+
 .inventory-list {
   @include desktop {
     padding: 0 0 0.5rem 0;
@@ -12,7 +20,7 @@
     @include tablet {
       display: flex;
       background-color: #f7f8f9b2;
-      padding: 0 1.5rem;
+      padding: 0;
     }
   }
 
@@ -24,6 +32,7 @@
     @include tablet {
       flex-direction: row;
       width: 100%;
+      padding: 0;
     }
 
     &:hover {
@@ -34,172 +43,147 @@
   &__item {
     padding: 1rem 0;
     display: flex;
-    gap: 0;
+    gap: 3rem;
 
     @include tablet {
-      gap: 0;
       width: 100%;
       padding: 0;
+      gap: 0;
+      flex: 5.5 !important;
     }
   }
 
   &__left {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 1rem;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
       width: 70%;
       gap: 0;
+      flex: 0.77 !important;
     }
   }
 
   &__right {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 1rem;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
       width: 50%;
-      gap: unset;
-    }
-  }
-
-  &__actions {
-    display: flex;
-    padding: 1rem 1rem 1.5rem 1rem;
-
-    @include tablet {
-      flex-direction: row;
       gap: 0;
-      margin-right: 0;
+      flex: 1 !important;
     }
   }
 }
 
-.td__link {
-  display: flex;
-  align-items: center;
-}
-
-.inventory-list:last-child > hr:last-child {
-  display: none;
-}
-
-@include tablet {
-  img.th-cell__sort-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .th-cell {
+.th-cell {
+  @include tablet {
     display: flex;
     flex: 1;
     padding: 0.5rem 1rem;
   }
 
-  .th-cell.th-cell--qty {
-    flex: 0.5;
+  &__sort-icon {
+    @include tablet {
+      width: 16px;
+      height: 16px;
+    }
   }
 
-  .th-cell__title {
+  &__title {
+    color: $secondary-color-1;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 0.7125rem;
+    }
+  }
+
+  &--qty {
+    @include tablet {
+      flex: 0.5;
+    }
+  }
+
+  &--actions {
+    @include tablet {
+      flex: 0.5 !important;
+    }
+  }
+}
+
+.td {
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link-text {
+    color: $primary-color-2;
     font-weight: 600;
   }
 
-  .inventory-list__header {
-    padding: 0;
+  &--actions {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+
+    @include tablet {
+      flex: 0.6;
+      display: block;
+      justify-content: unset;
+      padding: 0.5rem 0 0.5rem 1rem;
+    }
   }
 
-  .inventory-list__item-wrapper {
-    padding: 0;
-  }
+  &__heading {
+    color: $secondary-color-1;
+    margin-bottom: 4px;
+    font-weight: 600;
 
-  .th-cell.th-cell--actions {
-    flex: 0.5 !important;
-  }
-
-  .td--actions {
-    flex: 0.6;
-  }
-
-  .td__heading {
     @include tablet {
       display: none;
     }
   }
 
-  .td.td--category {
-    flex: 0.62;
-    padding: 0.5rem 1rem;
+  &--category {
+    @include tablet {
+      flex: 0.62;
+      padding: 0.5rem 1rem;
+    }
   }
 
-  .td--item {
-    flex: 0.62;
-    padding: 0.5rem 1rem;
+  &--item {
+    @include tablet {
+      flex: 0.62;
+      padding: 0.5rem 1rem;
+    }
   }
 
-  .td.td--qty {
-    flex: 0.5;
-    padding: 0.5rem 1rem;
+  &--qty {
+    @include tablet {
+      flex: 0.5;
+      padding: 0.5rem 1rem;
+    }
   }
 
-  .td.td--status {
-    padding: 0.5rem 1rem;
-    flex: 1;
+  &--status {
+    @include tablet {
+      padding: 0.5rem 1rem;
+      flex: 1;
+    }
   }
 
-  .td.td--warehouse {
-    flex: 1;
-    padding: 0.5rem 1rem;
-  }
-}
-
-.inventory-list__item {
-  gap: 3rem;
-
-  @include tablet {
-    gap: 0;
-    flex: 5.5 !important;
-  }
-}
-
-.inventory-list__left {
-  gap: 1rem;
-
-  @include tablet {
-    gap: 0;
-    flex: 0.77 !important;
-  }
-}
-
-.inventory-list__right {
-  gap: 1rem;
-
-  @include tablet {
-    gap: 0;
-    flex: 1 !important;
-  }
-}
-
-.td--actions {
-  display: flex;
-  justify-content: space-between;
-
-  @include tablet {
-    display: block;
-    justify-content: unset;
-    padding: 0.5rem 0 0.5rem 1rem;
-  }
-}
-
-.inventory-list__item-wrapper {
-  padding: 1rem 1.5rem;
-
-  @include tablet {
-    padding: 0;
+  &--warehouse {
+    @include tablet {
+      flex: 1;
+      padding: 0.5rem 1rem;
+    }
   }
 }
