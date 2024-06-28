@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import "../../pages/Warehouses/Warehouses.scss";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import "../../components/WarehouseList/WarehouseList.scss";
