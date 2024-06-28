@@ -1,12 +1,6 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.main {
-  position: relative;
-  height: 100%;
-  background-color: $bg-color-2;
-}
-
 .inventory {
   position: relative;
   top: -3.75rem;
@@ -27,19 +21,22 @@
   }
 
   &__title-bar {
+    padding: 1.5rem 1rem 1rem 1rem;
+
     @include tablet {
       display: flex;
       align-items: center;
-      padding: 0 1.5rem;
+      padding: 1rem 1.5rem;
+      gap: 1rem;
     }
 
     @include desktop {
-      padding: 0 1.5rem;
+      padding: 1rem 1.5rem;
     }
   }
 
   &__heading {
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding-bottom: 1rem;
     font-weight: 600;
     font-style: normal;
   }
