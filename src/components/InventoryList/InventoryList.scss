@@ -20,7 +20,13 @@
     @include tablet {
       display: flex;
       background-color: #f7f8f9b2;
-      padding: 0;
+      padding: 8px 1rem;
+    }
+
+    @include desktop {
+      display: flex;
+      background-color: #f7f8f9b2;
+      padding: 8px 2rem;
     }
   }
 
@@ -32,7 +38,13 @@
     @include tablet {
       flex-direction: row;
       width: 100%;
-      padding: 0;
+      padding: 0.5rem 1rem;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      width: 100%;
+      padding: 0.5rem 2rem;
     }
 
     &:hover {
@@ -86,7 +98,7 @@
   @include tablet {
     display: flex;
     flex: 1;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8rem;
   }
 
   &__sort-icon {
@@ -161,27 +173,27 @@
   &--category {
     @include tablet {
       flex: 0.62;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.8rem;
     }
   }
 
   &--item {
     @include tablet {
       flex: 0.62;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.8rem;
     }
   }
 
   &--qty {
     @include tablet {
       flex: 0.5;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.8rem;
     }
   }
 
   &--status {
     @include tablet {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.8rem;
       flex: 1;
     }
   }
@@ -189,7 +201,7 @@
   &--warehouse {
     @include tablet {
       flex: 1;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.8rem;
     }
   }
 }
