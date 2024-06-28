@@ -80,7 +80,7 @@
       flex-direction: row;
       justify-content: start;
       gap: 1rem;
-      margin-right: 1rem;
+      margin-right: 0;
     }
   }
 }
@@ -164,6 +164,10 @@
       color: $secondary-color-1;
       padding-bottom: 0.25rem;
     }
+  }
+
+  &--status {
+    margin-left: -0.7rem;
   }
 }
 

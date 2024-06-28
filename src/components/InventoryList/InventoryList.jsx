@@ -40,7 +40,12 @@ const InventoryList = () => {
     <section className="inventory-list">
       <article className="inventory-list__header">
         {headerArray.map((title, index) => (
-          <div key={index} className="header-cell">
+          <div
+            key={index}
+            className={`header-cell ${
+              title === "STATUS" ? "header-cell--status" : ""
+            }`}
+          >
             <h4 className="header-cell__title">{title}</h4>
             {title !== "ACTIONS" ? (
               <img
