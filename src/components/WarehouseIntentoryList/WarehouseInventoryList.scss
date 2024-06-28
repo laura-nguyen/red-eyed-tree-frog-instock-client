@@ -81,6 +81,8 @@
   &__item {
     flex: 0.4;
     text-align: left;
+    display: flex;
+    align-items: center;
 
     &--link {
       display: flex;
@@ -97,15 +99,22 @@
   &__category {
     @include tablet {
       flex: 0.3;
+      display: flex;
+      align-items: center;
+      padding-right: 0.5rem;
     }
   }
 
   &__status {
     flex: 0.5;
+    display: flex;
+    align-items: center;
   }
 
   &__quantity {
     flex: 0.4;
+    display: flex;
+    align-items: center;
 
     @include desktop {
       flex: 0.5;
