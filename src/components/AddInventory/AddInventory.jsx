@@ -81,10 +81,10 @@ const AddInventory = () => {
 
     if (validateForm()) {
       try {
-        formData["status"] =
-          formData["status"] === "inStock" ? "In Stock" : "Out of Stock";
         formData["quantity"] =
           formData["status"] === "inStock" ? formData["quantity"] : "0";
+        formData["status"] =
+          formData["status"] === "inStock" ? "In Stock" : "Out of Stock";
 
         const response = await axios.post(`${API_URL}/inventories`, formData);
         alert("Inventory item added successfully");
@@ -210,7 +210,7 @@ const AddInventory = () => {
                   onChange={handleOptionChange}
                 />
                 <label htmlFor="outOfStock" className="form__radio-label">
-                  Out of Stock
+                  Out of stock
                 </label>
               </div>
             </div>
