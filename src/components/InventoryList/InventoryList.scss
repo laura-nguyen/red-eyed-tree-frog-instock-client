@@ -11,7 +11,6 @@
 
     @include tablet {
       display: flex;
-      justify-content: space-between;
       background-color: #f7f8f9b2;
       padding: 0 1.5rem;
     }
@@ -35,7 +34,7 @@
   &__item {
     padding: 1rem 0;
     display: flex;
-    gap: 20%;
+    gap: 0;
 
     @include tablet {
       gap: 0;
@@ -47,26 +46,24 @@
   &__left {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
       width: 70%;
-      gap: 1rem;
+      gap: 0;
     }
   }
 
   &__right {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
       width: 50%;
       gap: unset;
     }
@@ -74,100 +71,135 @@
 
   &__actions {
     display: flex;
-    justify-content: space-between;
     padding: 1rem 1rem 1.5rem 1rem;
 
     @include tablet {
       flex-direction: row;
-      justify-content: start;
-      gap: 1rem;
-      margin-right: 1rem;
+      gap: 0;
+      margin-right: 0;
     }
   }
 }
 
-.cell {
-  @include tablet {
+.td__link {
+  display: flex;
+  align-items: center;
+}
+
+.inventory-list:last-child > hr:last-child {
+  display: none;
+}
+
+@include tablet {
+  img.th-cell__sort-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .th-cell {
+    display: flex;
     flex: 1;
-    padding: 1rem;
-    padding-right: 0;
+    padding: 0.5rem 1rem;
   }
 
-  &--status{
-    @include tablet {
-      margin-left: -3rem;
-    }
+  .th-cell.th-cell--qty {
+    flex: 0.5;
   }
 
-  &--category {
-    @include tablet {
-      margin-left: 0;
-    }
-  }
-
-  &--qty {
-    @include tablet {
-      margin-left: -.5rem;
-    }
-  }
-
-  &--warehouse {
-    @include tablet {
-      margin-left: -2rem;
-    }
-  }
-
-  &__heading {
+  .th-cell__title {
     font-weight: 600;
-    color: $secondary-color-1;
-    padding-bottom: 0.25rem;
+  }
 
+  .inventory-list__header {
+    padding: 0;
+  }
+
+  .inventory-list__item-wrapper {
+    padding: 0;
+  }
+
+  .th-cell.th-cell--actions {
+    flex: 0.5 !important;
+  }
+
+  .td--actions {
+    flex: 0.6;
+  }
+
+  .td__heading {
     @include tablet {
       display: none;
     }
   }
 
-  &__link {
-    display: flex;
-    align-items: center;
+  .td.td--category {
+    flex: 0.62;
+    padding: 0.5rem 1rem;
   }
 
-  &__link-text {
-    color: $primary-color-2;
-    font-weight: 600;
+  .td--item {
+    flex: 0.62;
+    padding: 0.5rem 1rem;
   }
 
-  &__icon {
-    width: 1.5rem;
-    height: 1.5rem;
+  .td.td--qty {
+    flex: 0.5;
+    padding: 0.5rem 1rem;
+  }
 
-    &--chevron {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
+  .td.td--status {
+    padding: 0.5rem 1rem;
+    flex: 1;
+  }
+
+  .td.td--warehouse {
+    flex: 1;
+    padding: 0.5rem 1rem;
   }
 }
 
-.header-cell {
+.inventory-list__item {
+  gap: 3rem;
+
   @include tablet {
-    padding: 1rem;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  &__sort-icon--hidden {
-    visibility: hidden;
-  }
-
-  &__title {
-    @include tablet {
-      font-weight: 600;
-      color: $secondary-color-1;
-      padding-bottom: 0.25rem;
-    }
+    gap: 0;
+    flex: 5.5 !important;
   }
 }
 
-.inventory-list:last-child > hr:last-child {
-  display: none;
+.inventory-list__left {
+  gap: 1rem;
+
+  @include tablet {
+    gap: 0;
+    flex: 0.77 !important;
+  }
+}
+
+.inventory-list__right {
+  gap: 1rem;
+
+  @include tablet {
+    gap: 0;
+    flex: 1 !important;
+  }
+}
+
+.td--actions {
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    display: block;
+    justify-content: unset;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+}
+
+.inventory-list__item-wrapper {
+  padding: 1rem 1.5rem;
+
+  @include tablet {
+    padding: 0;
+  }
 }
