@@ -2,7 +2,7 @@ import React from "react";
 import "./PopUp.scss";
 import popupIcon from "../../assets/icons/close-24px.svg";
 
-const Popup = ({ handleDelete, closePopup, warehouseName, warehouseId }) => {
+const Popup = ({ handleDelete, closePopup, name }) => {
   return (
     <div className="popup__overlay">
       <div className="popup__content">
@@ -10,12 +10,10 @@ const Popup = ({ handleDelete, closePopup, warehouseName, warehouseId }) => {
           <div className="popup__iconDiv">
             <img onClick={closePopup} src={popupIcon} alt="cancel image" />
           </div>
-          <div className="popup__question">
-            Delete {warehouseName} warehouse?
-          </div>
+          <div className="popup__question">Delete {name} warehouse?</div>
           <p className="popup__description">
-            Please confirm that you'd like to delete the {warehouseName} from
-            the list of warehouses.You wont't be able to undo this action.
+            Please confirm that you'd like to delete the {name} from the list of
+            warehouses.You wont't be able to undo this action.
           </p>
         </section>
         <div className="popup__buttonDiv">

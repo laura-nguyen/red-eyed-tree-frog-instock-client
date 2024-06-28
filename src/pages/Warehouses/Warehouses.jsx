@@ -95,8 +95,7 @@ const Warehouses = () => {
               <Popup
                 handleDelete={handleDelete}
                 closePopup={closePopup}
-                warehouseName={deleteWareHouseName}
-                warehouseId={deleteWareHouseId}
+                name={deleteWareHouseName}
               />
             )}
           </section>
