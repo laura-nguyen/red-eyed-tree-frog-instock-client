@@ -1,10 +1,11 @@
 import "./WarehouseDetails.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import editIcon from "../../assets/icons/edit-20px-white.svg";
 
 const WarehouseDetails = ({ warehouseDetails }) => {
   const {
+    id,
     warehouse_name,
     address,
     city,
@@ -16,25 +17,31 @@ const WarehouseDetails = ({ warehouseDetails }) => {
   } = warehouseDetails;
 
   return (
-    <main className="wh-details__wrapper">
+    <section>
       <div className="wh-details__header">
         <div className="wh-details__header-text-wrapper">
-          <Link className="wh-details__header-btn--back" to={"/warehouses"}>
+          <NavLink className="wh-details__header-btn--back" to={"/warehouses"}>
             <img
               className="wh-details__header-icon--back"
               src={backArrow}
               alt="back arrow"
             />
-          </Link>
+          </NavLink>
           <h1 className="wh-details__title">{warehouse_name}</h1>
         </div>
-        <button className="wh-details__header-btn--edit-mobile">
+        <NavLink
+          className="wh-details__header-btn--edit-mobile"
+          to={`/warehouses/edit/${id}`}
+        >
           <img src={editIcon} alt="edit icon" />
-        </button>
-        <button className="wh-details__header-btn--edit-tablet">
+        </NavLink>
+        <NavLink
+          className="wh-details__header-btn--edit-tablet"
+          to={`/warehouses/edit/${id}`}
+        >
           <img src={editIcon} alt="edit icon" />
           Edit
-        </button>
+        </NavLink>
       </div>
 
       <div className="wh-details__info">
@@ -60,7 +67,7 @@ const WarehouseDetails = ({ warehouseDetails }) => {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

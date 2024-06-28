@@ -28,27 +28,19 @@ const AddInventory = () => {
     warehouse_id: "",
   });
 
-  const getCategories = async () => {
+  const getSelectOptions = async () => {
     try {
-      const response = await axios.get(`${API_URL}/categories`);
-      setCategories(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getWarehouses = async () => {
-    try {
-      const response = await axios.get(`${API_URL}/warehouses`);
-      setWarehouses(response.data);
+      const response1 = await axios.get(`${API_URL}/categories`);
+      const response2 = await axios.get(`${API_URL}/warehouses`);
+      setCategories(response1.data);
+      setWarehouses(response2.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getCategories();
-    getWarehouses();
+    getSelectOptions();
   }, []);
 
   const navigate = useNavigate();
@@ -91,6 +83,9 @@ const AddInventory = () => {
       try {
         formData["status"] =
           formData["status"] === "inStock" ? "In Stock" : "Out of Stock";
+        formData["quantity"] =
+          formData["status"] === "inStock" ? formData["quantity"] : "0";
+
         const response = await axios.post(`${API_URL}/inventories`, formData);
         alert("Inventory item added successfully");
         navigate("/inventories");

@@ -1,0 +1,191 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.wh-inv {
+  &__header {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      background-color: $bg-color-2;
+      padding: 0 2rem;
+    }
+
+    &-subtitles {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+
+      &--status {
+        @include tablet {
+          flex: 0.5;
+          padding-left: 0.7rem;
+        }
+      }
+
+      &--category {
+        @include tablet {
+          flex: 0.3;
+        }
+      }
+
+      &--item {
+        flex: 0.4;
+      }
+
+      &--quantity {
+        flex: 0.4;
+
+        @include desktop {
+          flex: 0.5;
+        }
+      }
+
+      &--actions {
+        @include tablet {
+          padding-left: 0.5rem;
+        }
+      }
+    }
+    &-label {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $secondary-color-1;
+      line-height: 1.125rem;
+
+      font-size: 0.6875rem;
+
+      @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+      }
+    }
+  }
+  &__icon {
+    &--sort {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &__items {
+    padding: 1rem 0;
+    @include tablet {
+      padding: 0;
+      font-size: 0.875rem;
+    }
+  }
+
+  &__item {
+    flex: 0.4;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &--link {
+      display: flex;
+      align-items: center;
+      color: $primary-color-2;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__category {
+    @include tablet {
+      flex: 0.3;
+      display: flex;
+      align-items: center;
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__status {
+    @include tablet {
+      flex: 0.5;
+      display: flex;
+      align-items: center;
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__quantity {
+    @include tablet {
+      flex: 0.4;
+      display: flex;
+      align-items: center;
+    }
+
+    @include desktop {
+      flex: 0.5;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+
+    @include tablet {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      padding: 0;
+    }
+  }
+
+  &__row {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-top: 0.0625rem solid $secondary-color-2;
+
+    @include tablet {
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: space-between;
+      border-top: 0;
+      padding: 1rem 2rem;
+      border-bottom: 0.0625rem solid $secondary-color-2;
+    }
+
+    &:hover {
+      background-color: $hovered-item-color;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    font-size: 0.8125rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+
+  &__subtitle {
+    &--mobile {
+      text-transform: uppercase;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: $secondary-color-1;
+      line-height: 1.125rem;
+      padding-bottom: 0.25rem;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
