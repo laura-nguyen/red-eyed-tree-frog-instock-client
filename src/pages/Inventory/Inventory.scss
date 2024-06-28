@@ -26,12 +26,8 @@
     @include tablet {
       display: flex;
       align-items: center;
-      padding: 1rem 1.5rem;
+      padding: 2rem;
       gap: 1rem;
-    }
-
-    @include desktop {
-      padding: 1rem 1.5rem;
     }
   }
 
@@ -39,5 +35,9 @@
     padding-bottom: 1rem;
     font-weight: 600;
     font-style: normal;
+
+    @include tablet {
+      padding-bottom: 0;
+    }
   }
 }

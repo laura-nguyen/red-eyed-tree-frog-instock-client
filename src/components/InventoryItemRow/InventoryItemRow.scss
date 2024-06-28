@@ -3,20 +3,18 @@
 
 .cell {
   @include tablet {
-    flex: 1;
-    padding: 1rem;
     padding-right: 0;
   }
 
   &--status {
     @include tablet {
-      margin-left: 2.5rem;
+      margin-left: -3.7rem !important;
     }
   }
 
   &--category {
     @include tablet {
-      margin-left: 3.5rem;
+      margin-left: -2rem !important;
     }
   }
 
