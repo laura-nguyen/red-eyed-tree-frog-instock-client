@@ -5,10 +5,11 @@ import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsP
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import Inventory from "./pages/Inventory/Inventory";
-import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
-import AddNewInventoryItem from "./components/AddNewInventoryItem/AddNewInventoryItem";
+import AddInventory from "./components/AddInventory/AddInventory";
+import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
 import Footer from "./components/Footer/Footer";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+
 import "./App.scss";
 
 function App() {
@@ -29,8 +30,11 @@ function App() {
         <Route path="/warehouses/add" element={<AddWarehouse />} />
 
         <Route path="/inventories" element={<Inventory />} />
-        <Route path="/inventories/add" element={<AddNewInventoryItem />} />
-        <Route path="/inventory/:id" element={<InventoryDetails />} />
+        <Route path="/inventories/add" element={<AddInventory />} />
+        <Route
+          path="/inventories/:inventoryId"
+          element={<InventoryDetailsPage />}
+        />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />

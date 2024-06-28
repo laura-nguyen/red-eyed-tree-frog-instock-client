@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import error from "../../assets/icons/error-24px.svg";
-import "./AddNewInventoryItem.scss";
+import "./AddInventory.scss";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const AddNewInventoryItem = () => {
+const AddInventory = () => {
   const [categories, setCategories] = useState([]);
   const [warehouses, setWarehouses] = useState([]);
   const [isOutOfStock, setIsOutOfStock] = useState(false);
@@ -285,4 +285,4 @@ const AddNewInventoryItem = () => {
   );
 };
 
-export default AddNewInventoryItem;
+export default AddInventory;
