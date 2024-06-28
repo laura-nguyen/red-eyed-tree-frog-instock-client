@@ -140,6 +140,7 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
+    font-size: 0.8125rem;
     height: 2.25rem;
     width: 50%;
     border: 1px solid $secondary-color-2;
@@ -163,6 +164,7 @@
       background-color: $bg-color-1;
       color: $primary-color-3;
       border: none;
+      cursor: pointer;
     }
   }
 }

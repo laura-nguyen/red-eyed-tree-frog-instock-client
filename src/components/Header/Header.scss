@@ -18,6 +18,8 @@
   @include desktop {
     max-width: 63.75rem;
     margin: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
   &__background {
     width: 100%;
