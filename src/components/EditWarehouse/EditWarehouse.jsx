@@ -9,6 +9,7 @@ import "./EditWarehouse.scss";
 
 const EditWarehouse = () => {
   const { warehouseId } = useParams();
+  const navigate = useNavigate();
   const [warehouse, setWarehouse] = useState(null);
   const [formData, setFormData] = useState({
     warehouse_name: "",
@@ -99,13 +100,15 @@ const EditWarehouse = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
       try {
         const response = await axios.put(
-          `http://localhost:8080/api/warehouses/${warehouseId}`,
+          `${apiUrl}/warehouses/${warehouseId}`,
           formData
         );
         alert("Warehouse edited successfully");
