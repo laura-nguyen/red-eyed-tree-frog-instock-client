@@ -45,6 +45,15 @@
   &__link {
     display: flex;
     align-items: center;
+
+    &:hover {
+      text-decoration: underline;
+
+      .cell__icon--chevron {
+        transition: transform 0.3s ease;
+        transform: translateX(4px);
+      }
+    }
   }
 
   &__link-text {

@@ -56,7 +56,7 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
                   to={`/inventories/${item.id}`}
                   className="wh-inv__item--link"
                 >
-                  <p>{item.item_name}</p>
+                  <p className="wh-inv__item-text">{item.item_name}</p>
                   <img
                     className="cell__icon cell__icon--chevron"
                     src={chevronIcon}

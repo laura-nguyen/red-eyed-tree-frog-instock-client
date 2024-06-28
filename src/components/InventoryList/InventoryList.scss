@@ -93,7 +93,7 @@
     padding-right: 0;
   }
 
-  &--status{
+  &--status {
     @include tablet {
       margin-left: -3rem;
     }
@@ -107,7 +107,7 @@
 
   &--qty {
     @include tablet {
-      margin-left: -.5rem;
+      margin-left: -0.5rem;
     }
   }
 
