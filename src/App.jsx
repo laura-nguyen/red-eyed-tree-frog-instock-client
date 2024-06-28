@@ -5,9 +5,9 @@ import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Inventory from "./pages/Inventory/Inventory";
-import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
+import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
 import Warehouses from "./pages/Warehouses/Warehouses";
 
 import "./App.scss";
@@ -30,7 +30,10 @@ function App() {
         <Route path="/warehouses/add" element={<AddWarehouse />} />
 
         <Route path="/inventories" element={<Inventory />} />
-        <Route path="/inventory/:id" element={<InventoryDetails />} />
+        <Route
+          path="/inventories/:inventoryId"
+          element={<InventoryDetailsPage />}
+        />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
