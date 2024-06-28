@@ -95,7 +95,8 @@ const Warehouses = () => {
               <Popup
                 handleDelete={handleDelete}
                 closePopup={closePopup}
-                name={deleteWareHouseName}
+                question={`Delete ${deleteWareHouseName} inventory item?`}
+                description={`Please confirm that you'd like to delete ${deleteWareHouseName} from the  inventory list. You won't be able to undo this action.`}
               />
             )}
           </section>
