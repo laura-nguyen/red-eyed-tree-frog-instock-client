@@ -34,7 +34,7 @@ const WarehouseItemRow = ({ warehouses }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="cell cell--category">
+                <div className="cell cell--address">
                   <h4 className="cell__heading">ADDRESS</h4>
                   <p className="p-medium">
                     {warehouses.address}, {warehouses.country}
@@ -42,11 +42,11 @@ const WarehouseItemRow = ({ warehouses }) => {
                 </div>
               </div>
               <div className="warehouse-list__right">
-                <div className="cell cell--status">
+                <div className="cell cell--contact">
                   <h4 className="cell__heading">CONTACT NAME</h4>
                   <p className="p-medium">{warehouses.contact_name}</p>
                 </div>
-                <div className="cell cell--qty">
+                <div className="cell cell--contactInfo">
                   <h4 className="cell__heading">CONTACT INFORMATION</h4>
                   <p className="p-medium">{warehouses.contact_phone}</p>
                   <p className="p-medium">{warehouses.contact_email}</p>
