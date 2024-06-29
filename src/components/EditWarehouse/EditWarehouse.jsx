@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import error from "../../assets/icons/error-24px.svg";
@@ -9,7 +9,6 @@ import "./EditWarehouse.scss";
 
 const EditWarehouse = () => {
   const { warehouseId } = useParams();
-  const navigate = useNavigate();
   const [warehouse, setWarehouse] = useState(null);
   const [formData, setFormData] = useState({
     warehouse_name: "",
@@ -112,11 +111,15 @@ const EditWarehouse = () => {
           formData
         );
         alert("Warehouse edited successfully");
-        navigate("/warehouses");
+        handleGoBack();
       } catch (error) {
         console.error("Error updating warehouse:", error);
       }
     }
+  };
+
+  const handleGoBack = () => {
+    window.history.back();
   };
 
   return (
@@ -292,7 +295,7 @@ const EditWarehouse = () => {
           </div>
         </div>
         <div className="edit-wh__buttons">
-          <Link className="edit-wh__cancel" to={"/warehouses"}>
+          <Link className="edit-wh__cancel" onClick={handleGoBack}>
             Cancel
           </Link>
           <button className="edit-wh__save" type="submit">

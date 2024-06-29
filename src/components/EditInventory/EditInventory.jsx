@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
@@ -8,7 +8,6 @@ import "./EditInventory.scss";
 const EditInventory = () => {
   const apiURL = import.meta.env.VITE_API_URL;
   const { inventoryId } = useParams();
-  const navigate = useNavigate();
   const [inventory, setInventory] = useState([]);
   const [categories, setCategories] = useState([]);
   const [warehouses, setWarehouses] = useState([]);
@@ -139,11 +138,15 @@ const EditInventory = () => {
         await axios.put(`${apiURL}/inventories/${inventoryId}`, formData);
 
         alert("Inventory item updated successfully");
-        navigate(`/inventories/${inventoryId}`);
+        handleGoBack();
       } catch (error) {
         console.error("Error updating inventory item:", error);
       }
     }
+  };
+
+  const handleGoBack = () => {
+    window.history.back();
   };
 
   if (inventory.length < 1) {
@@ -326,7 +329,7 @@ const EditInventory = () => {
           </div>
         </div>
         <div className="edit-inventory__buttons">
-          <Link className="link--cancel" to={`/inventories/${inventoryId}`}>
+          <Link className="link--cancel" onClick={handleGoBack}>
             <button className="button button--cancel">Cancel</button>
           </Link>
           <button className="button" type="submit">
