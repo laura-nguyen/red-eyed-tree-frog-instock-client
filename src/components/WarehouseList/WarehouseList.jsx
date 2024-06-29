@@ -33,11 +33,17 @@ export default function Warehouses() {
     <section className="warehouse-list">
       <article className="warehouse-list__header">
         {headerArray.map((title, index) => (
-          <div key={index} className="header-cell">
-            <h4 className="header-cell__title">{title}</h4>
+          <div
+            key={index}
+            className={`wh-th-cell wh-th-cell--${title
+              .toLowerCase()
+              .split(" ")
+              .join("-")}`}
+          >
+            <h4 className="wh-th-cell__title">{title}</h4>
             {title !== "ACTIONS" ? (
               <img
-                className="header-cell__sort-icon"
+                className="wh-th-cell__sort-icon"
                 src={sortIcon}
                 alt="Sort Icon"
               />
