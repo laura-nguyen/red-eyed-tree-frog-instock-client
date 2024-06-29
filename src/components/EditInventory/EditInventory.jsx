@@ -160,7 +160,6 @@ const EditInventory = () => {
         </Link>
         <h1 className="edit-inventory__heading">Edit Inventory Item</h1>
       </div>
-      <hr className="divider" />
 
       <form className="form" onSubmit={handleSubmit}>
         <div className="form__sections">

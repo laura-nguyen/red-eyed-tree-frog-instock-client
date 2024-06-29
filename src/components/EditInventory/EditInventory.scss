@@ -11,12 +11,11 @@
   box-shadow: 0 2px 5px 0 $box-shadow-color;
 
   @include tablet {
-    top: -5.6rem;
+    top: -6.01rem;
     margin: 0 2rem;
   }
 
   @include desktop {
-    top: -6.01rem;
     max-width: 63.75rem;
     margin: auto;
   }
@@ -24,17 +23,15 @@
   &__title-bar {
     padding: 2rem 1.5rem 1.5rem 1.5rem;
     display: flex;
-    align-items: baseline;
-    gap: 0.25rem;
+    align-items: flex-end;
+    gap: 0.5rem;
+    border-bottom: solid 0.0625rem $secondary-color-2;
 
     @include tablet {
-      display: flex;
-      align-items: center;
-      padding: 2rem 1.5rem 1rem 1.5rem;
+      padding: 2rem 2rem 1.5rem 2rem;
     }
 
     @include desktop {
-      padding: 2rem 2rem 1.5rem 2rem;
       align-items: end;
     }
   }
@@ -42,7 +39,7 @@
   &__heading {
     font-weight: 600;
     font-style: normal;
-    font-size: 1.6187rem;
+    font-size: 1.75rem;
 
     @include tablet {
       font-size: 2rem;
