@@ -4,8 +4,15 @@ import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import editIcon from "../../assets/icons/edit-20px-white.svg";
 
 const InventoryDetails = ({ inventoryDetails }) => {
-  const { warehouse_name, item_name, description, category, status, quantity } =
-    inventoryDetails;
+  const {
+    id,
+    warehouse_name,
+    item_name,
+    description,
+    category,
+    status,
+    quantity,
+  } = inventoryDetails;
 
   return (
     <main className="inv-details__wrapper">
@@ -23,10 +30,12 @@ const InventoryDetails = ({ inventoryDetails }) => {
         <button className="inv-details__header-btn--edit-mobile">
           <img src={editIcon} alt="edit icon" />
         </button>
-        <button className="inv-details__header-btn--edit-tablet">
-          <img src={editIcon} alt="edit icon" />
-          Edit
-        </button>
+        <Link to={`/inventories/edit/${id}`}>
+          <button className="inv-details__header-btn--edit-tablet">
+            <img src={editIcon} alt="edit icon" />
+            Edit
+          </button>
+        </Link>
       </div>
 
       <div className="inv-details__content">

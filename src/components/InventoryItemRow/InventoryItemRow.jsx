@@ -62,11 +62,13 @@ const InventoryItemRow = ({ inventories }) => {
                 src={deleteIcon}
                 alt="Delete Inventory Icon"
               />
-              <img
-                className="td__icon"
-                src={editIcon}
-                alt="Edit Inventory Icon"
-              />
+              <Link to={`/inventories/edit/${inventory.id}`}>
+                <img
+                  className="cell__icon"
+                  src={editIcon}
+                  alt="Edit Inventory Icon"
+                />
+              </Link>
             </div>
           </article>
           <hr className="divider" />

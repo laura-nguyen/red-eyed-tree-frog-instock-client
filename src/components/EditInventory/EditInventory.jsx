@@ -1,13 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import error from "../../assets/icons/error-24px.svg";
-import "./AddInventory.scss";
+import "./EditInventory.scss";
 
-const API_URL = import.meta.env.VITE_API_URL;
-
-const AddInventory = () => {
+const EditInventory = () => {
+  const apiURL = import.meta.env.VITE_API_URL;
+  const { inventoryId } = useParams();
+  const navigate = useNavigate();
+  const [inventory, setInventory] = useState([]);
   const [categories, setCategories] = useState([]);
   const [warehouses, setWarehouses] = useState([]);
   const [isOutOfStock, setIsOutOfStock] = useState(false);
@@ -28,22 +30,63 @@ const AddInventory = () => {
     warehouse_id: "",
   });
 
-  const getSelectOptions = async () => {
-    try {
-      const response1 = await axios.get(`${API_URL}/categories`);
-      const response2 = await axios.get(`${API_URL}/warehouses`);
-      setCategories(response1.data);
-      setWarehouses(response2.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getSelectOptions = async () => {
+      try {
+        const [response1, response2] = await Promise.all([
+          axios.get(`${apiURL}/categories`),
+          axios.get(`${apiURL}/warehouses`),
+        ]);
+
+        const categoriesRes = await response1.data;
+        const warehousesRes = await response2.data;
+
+        setCategories(categoriesRes);
+        setWarehouses(warehousesRes);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     getSelectOptions();
   }, []);
 
-  const navigate = useNavigate();
+  const sanitizeString = (str) => str.trim().toLowerCase();
+
+  useEffect(() => {
+    const fetchInventory = async () => {
+      try {
+        const res = await axios.get(`${apiURL}/inventories/${inventoryId}`);
+        const warehouse = warehouses.find(
+          (w) =>
+            sanitizeString(w.warehouse_name) ===
+            sanitizeString(res.data.warehouse_name)
+        );
+
+        const inventory = {
+          item_name: res.data.item_name,
+          description: res.data.description,
+          category: res.data.category,
+          status: res.data.status === "In Stock" ? "inStock" : "outOfStock",
+          quantity: res.data.quantity,
+          warehouse_id: warehouse ? warehouse.id : "",
+        };
+
+        if (res.data.status === "In Stock") {
+          setIsOutOfStock(false);
+        } else {
+          setIsOutOfStock(true);
+        }
+
+        setFormData(inventory);
+        setInventory(inventory);
+      } catch (error) {
+        console.error("Error fetching inventory data:", error);
+      }
+    };
+
+    fetchInventory();
+  }, [inventoryId, warehouses]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -86,26 +129,36 @@ const AddInventory = () => {
         formData["status"] =
           formData["status"] === "inStock" ? "In Stock" : "Out of Stock";
 
-        const response = await axios.post(`${API_URL}/inventories`, formData);
-        alert("Inventory item added successfully");
-        navigate("/inventories");
+        console.log(formData);
+
+        await axios.put(`${apiURL}/inventories/${inventoryId}`, formData);
+
+        alert("Inventory item edited successfully");
+        navigate(`/inventories/${inventoryId}`);
       } catch (error) {
-        console.error("Error adding inventory item:", error);
+        console.error("Error updating inventory item:", error);
       }
     }
   };
 
+  if (inventory.length < 1) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <main className="add-inventory">
-      <div className="add-inventory__title-bar">
-        <Link className="add-inventory__back-link" to={"/inventories"}>
+    <main className="edit-inventory">
+      <div className="edit-inventory__title-bar">
+        <Link
+          className="edit-inventory__back-link"
+          to={`/inventories/${inventoryId}`}
+        >
           <img
-            className="add-inventory__back-icon"
+            className="edit-inventory__back-icon"
             src={backArrow}
             alt="back arrow"
           />
         </Link>
-        <h1 className="add-inventory__heading">Add New Inventory Item</h1>
+        <h1 className="edit-inventory__heading">Edit Inventory Item</h1>
       </div>
       <hr className="divider" />
 
@@ -267,12 +320,12 @@ const AddInventory = () => {
             )}
           </div>
         </div>
-        <div className="add-inventory__buttons">
-          <Link className="link--cancel" to={"/inventories"}>
+        <div className="edit-inventory__buttons">
+          <Link className="link--cancel" to={`/inventories/${inventoryId}`}>
             <button className="button button--cancel">Cancel</button>
           </Link>
           <button className="button" type="submit">
-            + Add Item
+            Save
           </button>
         </div>
       </form>
@@ -280,4 +333,4 @@ const AddInventory = () => {
   );
 };
 
-export default AddInventory;
+export default EditInventory;
