@@ -139,10 +139,6 @@
   &__link-text {
     color: $primary-color-2;
     font-weight: 600;
-
-    @include tablet {
-      flex: 0;
-    }
   }
 
   &--actions {
@@ -154,7 +150,12 @@
       flex: 0.6;
       justify-content: normal;
       gap: 0.5rem;
-      padding: 0.5rem 0 0.5rem 1rem;
+      padding: 0.5rem 1rem 0.5rem 0rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &-edit {
       display: flex;
       align-items: center;
     }
@@ -201,7 +202,7 @@
   &--warehouse {
     @include tablet {
       flex: 1;
-      padding: 0.5rem 0.8rem;
+      padding: 0.5rem 0rem;
     }
   }
 }
