@@ -1,24 +1,24 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import '../../pages/Warehouses/Warehouses.scss'
+import "../../pages/Warehouses/Warehouses.scss";
 import sortIcon from "../../assets/icons/sort-24px.svg";
-import '../../components/WarehouseList/WarehouseList.scss';
-import WarehouseItemRow from '../WarehouseItemRow/WarehouseItemRow';
+import "../../components/WarehouseList/WarehouseList.scss";
+import WarehouseItemRow from "../WarehouseItemRow/WarehouseItemRow";
 
-export default function Warehouses () {
+export default function Warehouses() {
   const API_URL = import.meta.env.VITE_API_URL;
   const [warehouseList, setWarehouse] = useState([]);
   const getWarehouseListEndPoint = `${API_URL}/warehouses`;
 
   const getwarehouseList = async () => {
-    try{
-      const result= await axios.get(getWarehouseListEndPoint);
+    try {
+      const result = await axios.get(getWarehouseListEndPoint);
       const warehouseList = result.data;
       setWarehouse(warehouseList);
-    }catch(e){
+    } catch (e) {
       console.log(e);
     }
-  }
+  };
   useEffect(() => {
     getwarehouseList();
   }, []);
@@ -51,4 +51,3 @@ export default function Warehouses () {
     </section>
   );
 }
-
