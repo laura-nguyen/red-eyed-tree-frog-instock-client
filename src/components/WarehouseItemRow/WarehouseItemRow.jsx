@@ -6,12 +6,12 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import "./WarehouseItemRow.scss";
 
 const WarehouseItemRow = ({ warehouses }) => {
-    console.log(warehouses);
-    const navigate = useNavigate();
+  console.log(warehouses);
+  const navigate = useNavigate();
 
-    const handleEditClick = (id) => {
-      navigate(`/warehouses/edit/${id}`);
-    };
+  const handleEditClick = (id) => {
+    navigate(`/warehouses/edit/${id}`);
+  };
   return (
     <>
       {warehouses.map((warehouses) => (
@@ -36,7 +36,9 @@ const WarehouseItemRow = ({ warehouses }) => {
                 </div>
                 <div className="cell cell--category">
                   <h4 className="cell__heading">ADDRESS</h4>
-                  <p className="p-medium">{warehouses.address}, {warehouses.country}</p>
+                  <p className="p-medium">
+                    {warehouses.address}, {warehouses.country}
+                  </p>
                 </div>
               </div>
               <div className="warehouse-list__right">
@@ -57,7 +59,8 @@ const WarehouseItemRow = ({ warehouses }) => {
                 src={deleteIcon}
                 alt="Delete warehouse icon"
               />
-              <img onClick={() => handleEditClick(1)}
+              <img
+                onClick={() => handleEditClick(1)}
                 className="cell__icon"
                 src={editIcon}
                 alt="Edit warehouse icon"
