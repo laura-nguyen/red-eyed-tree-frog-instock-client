@@ -18,7 +18,7 @@ const EditInventory = () => {
     description: "",
     category: "",
     status: "inStock",
-    quantity: "0",
+    quantity: "",
     warehouse_id: "",
   });
   const [errors, setErrors] = useState({
@@ -107,9 +107,14 @@ const EditInventory = () => {
 
   const validateForm = () => {
     const newErrors = {};
+    const statusValue = formData["status"];
 
     Object.keys(formData).forEach((key) => {
-      if (!formData[key]) {
+      if (key === "quantity") {
+        if (statusValue === "inStock" && !formData[key]) {
+          newErrors[key] = "This field value should be greater than 0";
+        }
+      } else if (!formData[key]) {
         newErrors[key] = "This field is required";
       }
     });
@@ -133,7 +138,7 @@ const EditInventory = () => {
 
         await axios.put(`${apiURL}/inventories/${inventoryId}`, formData);
 
-        alert("Inventory item edited successfully");
+        alert("Inventory item updated successfully");
         navigate(`/inventories/${inventoryId}`);
       } catch (error) {
         console.error("Error updating inventory item:", error);
