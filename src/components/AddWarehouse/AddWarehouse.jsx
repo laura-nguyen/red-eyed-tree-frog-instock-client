@@ -93,7 +93,7 @@ const AddWarehouse = () => {
         <Link className="add-wh__back-link" to={"/warehouses"}>
           <img className="add-wh__back-icon" src={backArrow} alt="back arrow" />
         </Link>
-        <h1 className="add-wh__title">Add Warehouse</h1>
+        <h1 className="add-wh__title">Add New Warehouse</h1>
       </div>
       <hr className="add-wh__divider" />
       <form className="form" onSubmit={handleSubmit}>
@@ -260,7 +260,7 @@ const AddWarehouse = () => {
             Cancel
           </Link>
           <button className="add-wh__save" type="submit">
-            Save
+            + Add Warehouse
           </button>
         </div>
       </form>
