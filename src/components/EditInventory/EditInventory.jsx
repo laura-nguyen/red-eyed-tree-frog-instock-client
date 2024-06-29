@@ -133,8 +133,6 @@ const EditInventory = () => {
         formData["status"] =
           formData["status"] === "inStock" ? "In Stock" : "Out of Stock";
 
-        console.log(formData);
-
         await axios.put(`${apiURL}/inventories/${inventoryId}`, formData);
 
         alert("Inventory item updated successfully");
