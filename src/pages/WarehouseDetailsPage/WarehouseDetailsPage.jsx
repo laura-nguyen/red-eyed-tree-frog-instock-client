@@ -2,7 +2,7 @@ import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import WarehouseInventoryList from "../../components/WarehouseIntentoryList/WarehouseInventoryList";
+import WarehouseInventoryList from "../../components/WarehouseInventoryList/WarehouseInventoryList";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const WarehouseDetailsPage = () => {
@@ -23,10 +23,14 @@ const WarehouseDetailsPage = () => {
   };
 
   const getWarehouseInventory = async () => {
-    let res = await axios.get(
-      `${API_URL}/warehouses/${warehouseId}/inventories`
-    );
-    setWarehouseInventoryDetails(res.data);
+    try {
+      let res = await axios.get(
+        `${API_URL}/warehouses/${warehouseId}/inventories`
+      );
+      setWarehouseInventoryDetails(res.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
