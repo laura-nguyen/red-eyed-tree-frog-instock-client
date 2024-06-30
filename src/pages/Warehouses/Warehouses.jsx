@@ -26,7 +26,7 @@ const Warehouses = () => {
   };
   useEffect(() => {
     getwarehouseList();
-  }, [deleteWareHouseId]);
+  }, []);
 
   const closePopup = () => {
     setIsPopupVisible(false);

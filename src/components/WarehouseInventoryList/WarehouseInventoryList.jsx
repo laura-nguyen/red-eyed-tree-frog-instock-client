@@ -5,7 +5,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import { Link } from "react-router-dom";
 import "./WarehouseInventoryList.scss";
 
-const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
+const WarehouseInventoryList = ({ warehouseInventoryDetails, openModal }) => {
   const headerArray = [
     "Inventory Item",
     "Category",
@@ -91,6 +91,7 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
             </div>
             <div className="wh-inv__actions">
               <img
+                onClick={() => openModal(item.item_name, item.id)}
                 className="cell__icon"
                 src={deleteIcon}
                 alt="Delete Inventory Icon"
