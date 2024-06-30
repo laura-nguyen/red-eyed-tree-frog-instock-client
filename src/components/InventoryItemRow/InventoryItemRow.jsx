@@ -59,7 +59,7 @@ const InventoryItemRow = ({ inventories, openModal }) => {
             <div className="td--actions">
               <img
                 onClick={() => openModal(inventory.item_name, inventory.id)}
-                className="cell__icon"
+                className="td__icon"
                 src={deleteIcon}
                 alt="Delete Inventory Icon"
               />

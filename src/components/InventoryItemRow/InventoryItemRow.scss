@@ -27,6 +27,10 @@
     }
   }
 
+  &__icon {
+    cursor: pointer;
+  }
+
   &--actions-edit {
     display: flex;
     align-items: center;
