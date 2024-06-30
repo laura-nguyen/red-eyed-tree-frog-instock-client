@@ -59,6 +59,7 @@
         margin:0
       }
   }
+
   &__buttonDiv {
       display: inline-flex;
       flex-direction: row;
@@ -70,18 +71,6 @@
         position: static;
         justify-content: end;
         margin-top: 2rem;
-      }
-  }
-  &__cancelBtn {
-      font-size: .8125rem;
-      width: 100%;
-      color: $secondary-color-1;
-      background-color: white;
-      border: 1px solid $secondary-color-2;
-      border-radius: 1.25rem;
-      height: 2.25rem;
-      @include tablet {
-        width: 4.4375rem;
       }
   }
   &__cancelBtnDiv, &__deleteBtnDiv {
@@ -100,6 +89,25 @@
       margin-right: 4rem;
     }
   }
+  &__cancelBtn:hover{
+    color: $primary-color-2;
+  }
+  &__popupBtn:hover{
+    background-color: $bg-color-1;
+  }
+  &__cancelBtn {
+      font-size: .8125rem;
+      width: 100%;
+      color: $secondary-color-1;
+      background-color: white;
+      border: 1px solid $secondary-color-2;
+      border-radius: 1.25rem;
+      height: 2.25rem;
+      @include tablet {
+        width: 4.4375rem;
+      }
+  }
+
   &__popupBtn {
       width: 100%;
       font-size: .8125rem;
