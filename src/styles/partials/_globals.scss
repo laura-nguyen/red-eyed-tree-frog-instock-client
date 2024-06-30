@@ -97,7 +97,7 @@ input {
   border-radius: 1.25rem;
   opacity: 1;
   outline: none;
-  border: 1px solid $secondary-color-2;
+  border: 0.0625rem solid $secondary-color-2;
   font-size: 0.8125rem;
   line-height: 1.25rem;
 
@@ -107,7 +107,7 @@ input {
   }
 
   &:focus {
-    border: 1px solid $primary-color-2;
+    border: 0.0625rem solid $primary-color-2;
     color: $primary-color-1;
   }
 }
@@ -120,7 +120,7 @@ textarea {
   border-radius: 1.25rem;
   opacity: 1;
   outline: none;
-  border: 1px solid $secondary-color-2;
+  border: 0.0625rem solid $secondary-color-2;
   font-size: 0.8125rem;
   line-height: 1.25rem;
   resize: none;
@@ -131,7 +131,7 @@ textarea {
   }
 
   &:focus {
-    border: 1px solid $primary-color-2;
+    border: 0.0625rem solid $primary-color-2;
     color: $primary-color-1;
   }
 }
@@ -146,11 +146,11 @@ select {
   border-radius: 1.25rem;
   opacity: 1;
   outline: none;
-  border: 1px solid $secondary-color-2;
+  border: 0.0625rem solid $secondary-color-2;
   color: $secondary-color-1;
 
   &:focus {
-    border: 1px solid $primary-color-2;
+    border: 0.0625rem solid $primary-color-2;
     color: $primary-color-1;
   }
 }
@@ -162,7 +162,7 @@ a {
 }
 
 .error {
-  border: 1px solid $supporting-color-2;
+  border: 0.0625rem solid $supporting-color-2;
   color: $secondary-color-1;
 }
 
@@ -205,12 +205,12 @@ a {
 
   &--cancel {
     background-color: $primary-color-3;
-    border: 1px solid $secondary-color-2;
+    border: 0.0625rem solid $secondary-color-2;
     color: $secondary-color-1;
 
     &:hover {
       background-color: $primary-color-3;
-      border: 1px solid $primary-color-2;
+      border: 0.0625rem solid $primary-color-2;
       color: $primary-color-2;
     }
   }
@@ -250,7 +250,7 @@ a {
 
 .divider {
   border: none;
-  border-bottom: 1px solid $secondary-color-2;
+  border-bottom: 0.0625rem solid $secondary-color-2;
 
   &--hide-big {
     @include tablet {

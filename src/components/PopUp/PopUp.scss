@@ -1,9 +1,8 @@
-@use '../../styles/partials/variables' as *;
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/globals' as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/globals" as *;
 
-
-.popup{
+.popup {
   &__overlay {
     position: fixed;
     top: 0;
@@ -22,7 +21,7 @@
     height: 100vh;
     @include tablet {
       position: absolute;
-      border-radius: .3125rem;
+      border-radius: 0.3125rem;
       top: 11.5625rem;
       width: 42rem;
       height: 16.375rem;
@@ -36,48 +35,49 @@
     padding: 1rem;
   }
   &__question {
-      font-size: 1.75rem;
-      font-weight: 1.75rem;
-      font-weight: 600;
-      color: $primary-color-1;
-      margin:0 1rem;
-      margin-bottom: 1rem;
-      @include tablet {
-        margin: 0 0 1rem 0 ;
-        font-size: 2rem;
-      }
+    font-size: 1.75rem;
+    font-weight: 1.75rem;
+    font-weight: 600;
+    color: $primary-color-1;
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+    @include tablet {
+      margin: 0 0 1rem 0;
+      font-size: 2rem;
+    }
   }
   &__description {
-      font-size: .9375rem;
-      font-weight: 400;
-      color: $primary-color-1;
-      margin:0 1rem;
-      @include tablet {
-        width: 34rem;
-        padding-right: 6.25rem;
-        font-size: 16px;
-        margin:0
-      }
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: $primary-color-1;
+    margin: 0 1rem;
+    @include tablet {
+      width: 34rem;
+      padding-right: 6.25rem;
+      font-size: 1rem;
+      margin: 0;
+    }
   }
 
   &__buttonDiv {
-      display: inline-flex;
-      flex-direction: row;
-      position: absolute;
-      bottom: 1rem;
-      width: 100%;
-      gap: 1rem;
-      @include tablet {
-        position: static;
-        justify-content: end;
-        margin-top: 2rem;
-      }
+    display: inline-flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    gap: 1rem;
+    @include tablet {
+      position: static;
+      justify-content: end;
+      margin-top: 2rem;
+    }
   }
-  &__cancelBtnDiv, &__deleteBtnDiv {
+  &__cancelBtnDiv,
+  &__deleteBtnDiv {
     width: 50%;
     box-sizing: border-box;
     @include tablet {
-      width:auto;
+      width: auto;
     }
   }
   &__cancelBtnDiv {
@@ -89,38 +89,38 @@
       margin-right: 4rem;
     }
   }
-  &__cancelBtn:hover{
+  &__cancelBtn:hover {
     color: $primary-color-2;
     border-color: $primary-color-2;
   }
-  &__popupBtn:hover{
+  &__popupBtn:hover {
     background-color: $bg-color-1;
   }
   &__cancelBtn {
-      font-size: .8125rem;
-      width: 100%;
-      color: $secondary-color-1;
-      background-color: white;
-      border: 1px solid $secondary-color-2;
-      border-radius: 1.25rem;
-      height: 2.25rem;
-      cursor: pointer;
-      @include tablet {
-        width: 4.4375rem;
-      }
+    font-size: 0.8125rem;
+    width: 100%;
+    color: $secondary-color-1;
+    background-color: white;
+    border: 0.0625rem solid $secondary-color-2;
+    border-radius: 1.25rem;
+    height: 2.25rem;
+    cursor: pointer;
+    @include tablet {
+      width: 4.4375rem;
+    }
   }
 
   &__popupBtn {
-      width: 100%;
-      font-size: .8125rem;
-      color: white;
-      background-color: $supporting-color-2;
-      border-radius: 1.25rem;
-      border: none;
-      height: 2.25rem;
-      cursor: pointer;
-      @include tablet {
-        width: 4.4375rem;
-      }
-}
+    width: 100%;
+    font-size: 0.8125rem;
+    color: white;
+    background-color: $supporting-color-2;
+    border-radius: 1.25rem;
+    border: none;
+    height: 2.25rem;
+    cursor: pointer;
+    @include tablet {
+      width: 4.4375rem;
+    }
+  }
 }

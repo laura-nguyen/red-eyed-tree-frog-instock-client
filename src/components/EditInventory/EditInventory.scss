@@ -7,8 +7,8 @@
   margin: 0 1rem;
   z-index: 1;
   background: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px 0 $box-shadow-color;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.3125rem 0 $box-shadow-color;
 
   @include tablet {
     top: -6.01rem;
@@ -78,7 +78,7 @@
 
     &--left {
       @include tablet {
-        border-right: 1px solid $secondary-color-2;
+        border-right: 0.0625rem solid $secondary-color-2;
       }
     }
 
@@ -150,19 +150,19 @@
   & + .form__radio-label:before {
     content: "";
     display: inline-block;
-    width: 8px;
-    height: 8px;
-    padding: 4px;
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0.25rem;
     margin-right: 0.5rem;
     background-clip: content-box;
-    border: 1px solid $secondary-color-2;
+    border: 0.0625rem solid $secondary-color-2;
     background-color: $primary-color-3;
     border-radius: 50%;
     cursor: pointer;
   }
 
   &:checked + .form__radio-label:before {
-    border: 1px solid $primary-color-2;
+    border: 0.0625rem solid $primary-color-2;
     background-color: $primary-color-2;
   }
 
