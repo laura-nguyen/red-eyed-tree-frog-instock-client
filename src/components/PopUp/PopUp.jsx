@@ -14,12 +14,16 @@ const Popup = ({ handleDelete, closePopup, question, description }) => {
           <p className="popup__description">{description}</p>
         </section>
         <div className="popup__buttonDiv">
-          <button onClick={closePopup} className="popup__cancelBtn">
-            Cancel
-          </button>
-          <button onClick={handleDelete} className="popup__popupBtn">
-            Delete
-          </button>
+          <div className="popup__cancelBtnDiv">
+            <button onClick={closePopup} className="popup__cancelBtn">
+              Cancel
+            </button>
+          </div>
+          <div className="popup__deleteBtnDiv">
+            <button onClick={handleDelete} className="popup__popupBtn">
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>

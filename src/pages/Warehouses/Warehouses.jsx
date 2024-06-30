@@ -14,7 +14,6 @@ const Warehouses = () => {
   const [deleteWareHouseName, setDeleteWareHouseName] = useState("");
   const [deleteWareHouseId, setDeleteWareHouseId] = useState("");
   const navigate = useNavigate();
-  const deleteWarehouseEndPoint = `${API_URL}/warehouses/`;
   const [warehouseList, setWarehouse] = useState([]);
   const getWarehouseListEndPoint = `${API_URL}/warehouses`;
 
@@ -93,8 +92,8 @@ const Warehouses = () => {
               <Popup
                 handleDelete={handleDelete}
                 closePopup={closePopup}
-                question={`Delete ${deleteWareHouseName} inventory item?`}
-                description={`Please confirm that you'd like to delete ${deleteWareHouseName} from the  inventory list. You won't be able to undo this action.`}
+                question={`Delete ${deleteWareHouseName} item?`}
+                description={`Please confirm that you'd like to delete ${deleteWareHouseName} from the list of warehouses. You won't be able to undo this action.`}
               />
             )}
           </section>
