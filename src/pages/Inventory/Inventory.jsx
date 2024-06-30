@@ -4,8 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import InventoryList from "../../components/InventoryList/InventoryList";
 import Search from "../../components/Search/Search";
 import "./Inventory.scss";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import Popup from "../../components/PopUp/PopUp";
 
 const Inventory = () => {
@@ -59,7 +57,6 @@ const Inventory = () => {
   };
   return (
     <main className="main">
-      <Header />
       <section className="inventory">
         <div className="inventory__title-bar">
           <h1 className="inventory__heading">Inventory</h1>
@@ -79,7 +76,6 @@ const Inventory = () => {
           />
         )}
       </section>
-      <Footer />
     </main>
   );
 };
