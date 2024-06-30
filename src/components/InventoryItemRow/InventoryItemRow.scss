@@ -45,7 +45,7 @@
   &--category {
     @include tablet {
       flex: 0.62;
-      padding: 0.5rem 0.8rem;
+      padding: 0.5rem 0rem;
     }
   }
 
@@ -53,6 +53,8 @@
     @include tablet {
       flex: 0.62;
       padding: 0.5rem 0.8rem;
+      padding-right: 0;
+      flex: 0.7;
     }
   }
 
@@ -65,7 +67,7 @@
 
   &--status {
     @include tablet {
-      padding: 0.5rem 0.8rem;
+      padding: 0.5rem;
       flex: 1;
     }
   }
@@ -74,6 +76,7 @@
     @include tablet {
       flex: 1;
       padding: 0.5rem 0rem;
+      margin-left: 1rem;
     }
   }
 }
