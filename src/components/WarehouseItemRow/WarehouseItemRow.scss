@@ -5,7 +5,7 @@
   &__link {
     display: flex;
     align-items: center;
-    &:hover{
+    &:hover {
       text-decoration: underline $primary-color-2;
     }
   }
@@ -50,29 +50,65 @@
 
   &--name {
     @include tablet {
-      flex: 0.62;
+      flex: 0.4;
       padding: 0.5rem 0.8rem;
+      padding-right: 0;
     }
   }
 
   &--address {
     @include tablet {
-      flex: 0.62;
+      flex: 0.4;
       padding: 0.5rem 0.8rem;
-    }
-  }
-
-  &--contact-info {
-    @include tablet {
-      padding:  0.5rem 0rem 0.5rem 1rem;
-      flex: 0.8;
+      padding-right: 0;
     }
   }
 
   &--contact-name {
     @include tablet {
       flex: 0.7;
-      padding:  0.5rem 0rem 0.5rem 0.5rem;
+      padding: 0.5rem 0rem 0.5rem 0;
+      margin-left: -2rem;
+    }
+  }
+
+  &--contact-info {
+    @include tablet {
+      padding-left: 0;
+    }
+  }
+
+  &--actions {
+    @include tablet {
+      // display: flex;
+      // justify-content: space-between;
+      // gap: 0.5rem !important;
+      flex: 0.3;
+      padding-right: 1rem;
     }
   }
 }
+
+// &--warehouse {
+//   flex: 0.7;
+// }
+
+// &--address {
+//   flex: 0.8;
+// }
+
+// &--contact-name {
+//   flex: 0.8;
+// }
+
+// &--contact-information {
+//   padding-left: 0;
+// }
+
+// &--actions {
+//   @include tablet {
+//     display: flex;
+//     justify-content: flex-end;
+//     flex: 0.5;
+//     padding-right: 1rem;
+//   }
