@@ -96,11 +96,16 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails, openModal }) => {
                 src={deleteIcon}
                 alt="Delete Inventory Icon"
               />
-              <img
-                className="cell__icon"
-                src={editIcon}
-                alt="Edit Inventory Icon"
-              />
+              <Link
+                to={`/inventories/edit/${item.id}`}
+                className="td--actions-edit"
+              >
+                <img
+                  className="cell__icon"
+                  src={editIcon}
+                  alt="Edit Inventory Icon"
+                />
+              </Link>
             </div>
           </div>
         ))}
