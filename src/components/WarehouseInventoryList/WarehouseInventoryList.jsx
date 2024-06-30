@@ -92,7 +92,7 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails, openModal }) => {
             <div className="wh-inv__actions">
               <img
                 onClick={() => openModal(item.item_name, item.id)}
-                className="cell__icon"
+                className="cell__icon td--actions-delete"
                 src={deleteIcon}
                 alt="Delete Inventory Icon"
               />
