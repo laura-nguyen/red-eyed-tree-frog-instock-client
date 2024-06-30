@@ -8,10 +8,6 @@ import "./WarehouseItemRow.scss";
 const WarehouseItemRow = ({ warehouses, openModal, hidePopup }) => {
   const navigate = useNavigate();
 
-  const handleEditClick = (id) => {
-    navigate(`/warehouses/edit/${id}`);
-  };
-
   return (
     <>
       {warehouses.map((warehouses) => (
@@ -19,56 +15,59 @@ const WarehouseItemRow = ({ warehouses, openModal, hidePopup }) => {
           <article className="warehouse-list__item-wrapper">
             <div className="warehouse-list__item">
               <div className="warehouse-list__left">
-                <div className="cell">
-                  <h4 className="cell__heading">WAREHOUSE</h4>
+                <div className="wh-td wh-td--name">
+                  <h4 className="wh-td__heading">WAREHOUSE</h4>
                   <Link to={`/warehouses/${warehouses.id}`}>
-                    <div className="cell__link">
-                      <p className="cell__link-text p-medium">
+                    <div className="wh-td__link">
+                      <p className="wh-td__link-text p-medium">
                         {warehouses.warehouse_name}
                       </p>
                       <img
-                        className="cell__icon cell__icon--chevron"
+                        className="wh-td__icon wh-td__icon--chevron"
                         src={chevronIcon}
                         alt="View warehouse icon"
                       />
                     </div>
                   </Link>
                 </div>
-                <div className="cell cell--category">
-                  <h4 className="cell__heading">ADDRESS</h4>
+                <div className="wh-td wh-td--address">
+                  <h4 className="wh-td__heading">ADDRESS</h4>
                   <p className="p-medium">
-                    {warehouses.address}, {warehouses.country}
+                    {`${warehouses.address}, ${warehouses.city}, ${warehouses.country}`}
                   </p>
                 </div>
               </div>
               <div className="warehouse-list__right">
-                <div className="cell cell--status">
-                  <h4 className="cell__heading">CONTACT NAME</h4>
+                <div className="wh-td wh-td--contact-name">
+                  <h4 className="wh-td__heading">CONTACT NAME</h4>
                   <p className="p-medium">{warehouses.contact_name}</p>
                 </div>
-                <div className="cell cell--qty">
-                  <h4 className="cell__heading">CONTACT INFORMATION</h4>
+                <div className="wh-td wh-td--contact-info">
+                  <h4 className="wh-td__heading">CONTACT INFORMATION</h4>
                   <p className="p-medium">{warehouses.contact_phone}</p>
                   <p className="p-medium">{warehouses.contact_email}</p>
                 </div>
               </div>
             </div>
-            <div className="warehouse-list__actions">
+            <div className="wh-td--actions">
               <img
+                className="wh-td__icon"
+                src={deleteIcon}
+                alt="Delete warehouse icon"
                 onClick={() =>
                   openModal(warehouses.warehouse_name, warehouses.id)
                 }
-                className="cell__icon"
-                src={deleteIcon}
-                alt="Delete warehouse icon"
               />
-
-              <img
-                onClick={() => handleEditClick(warehouses.id)}
-                className="cell__icon"
-                src={editIcon}
-                alt="Edit warehouse icon"
-              />
+              <Link
+                to={`/warehouses/edit/${warehouses.id}`}
+                className="wh-td--actions-edit"
+              >
+                <img
+                  className="wh-td__icon"
+                  src={editIcon}
+                  alt="Edit warehouse icon"
+                />
+              </Link>
             </div>
           </article>
           <hr className="divider" />

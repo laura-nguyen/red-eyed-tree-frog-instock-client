@@ -14,6 +14,10 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
     "Actions",
   ];
 
+  if (warehouseInventoryDetails.length === 0) {
+    return;
+  }
+
   return (
     <section>
       <div className="wh-inv__header">
@@ -56,7 +60,7 @@ const WarehouseInventoryList = ({ warehouseInventoryDetails }) => {
                   to={`/inventories/${item.id}`}
                   className="wh-inv__item--link"
                 >
-                  <p>{item.item_name}</p>
+                  <p className="wh-inv__item-para">{item.item_name}</p>
                   <img
                     className="cell__icon cell__icon--chevron"
                     src={chevronIcon}

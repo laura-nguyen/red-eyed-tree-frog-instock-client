@@ -27,15 +27,19 @@ const InventoryDetails = ({ inventoryDetails }) => {
           </Link>
           <h1 className="inv-details__title">{item_name}</h1>
         </div>
-        <button className="inv-details__header-btn--edit-mobile">
-          <img src={editIcon} alt="edit icon" />
-        </button>
-        <Link to={`/inventories/edit/${id}`}>
-          <button className="inv-details__header-btn--edit-tablet">
-            <img src={editIcon} alt="edit icon" />
-            Edit
-          </button>
-        </Link>
+        <div>
+          <Link to={`/inventories/edit/${id}`}>
+            <button className="inv-details__header-btn--edit-mobile">
+              <img src={editIcon} alt="edit icon" />
+            </button>
+          </Link>
+          <Link to={`/inventories/edit/${id}`}>
+            <button className="inv-details__header-btn--edit-tablet">
+              <img src={editIcon} alt="edit icon" />
+              Edit
+            </button>
+          </Link>
+        </div>
       </div>
 
       <div className="inv-details__content">

@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
@@ -8,7 +8,6 @@ import "./EditInventory.scss";
 const EditInventory = () => {
   const apiURL = import.meta.env.VITE_API_URL;
   const { inventoryId } = useParams();
-  const navigate = useNavigate();
   const [inventory, setInventory] = useState([]);
   const [categories, setCategories] = useState([]);
   const [warehouses, setWarehouses] = useState([]);
@@ -18,7 +17,7 @@ const EditInventory = () => {
     description: "",
     category: "",
     status: "inStock",
-    quantity: "0",
+    quantity: "",
     warehouse_id: "",
   });
   const [errors, setErrors] = useState({
@@ -107,9 +106,14 @@ const EditInventory = () => {
 
   const validateForm = () => {
     const newErrors = {};
+    const statusValue = formData["status"];
 
     Object.keys(formData).forEach((key) => {
-      if (!formData[key]) {
+      if (key === "quantity") {
+        if (statusValue === "inStock" && !formData[key]) {
+          newErrors[key] = "This field value should be greater than 0";
+        }
+      } else if (!formData[key]) {
         newErrors[key] = "This field is required";
       }
     });
@@ -129,16 +133,18 @@ const EditInventory = () => {
         formData["status"] =
           formData["status"] === "inStock" ? "In Stock" : "Out of Stock";
 
-        console.log(formData);
-
         await axios.put(`${apiURL}/inventories/${inventoryId}`, formData);
 
-        alert("Inventory item edited successfully");
-        navigate(`/inventories/${inventoryId}`);
+        alert("Inventory item updated successfully");
+        handleGoBack();
       } catch (error) {
         console.error("Error updating inventory item:", error);
       }
     }
+  };
+
+  const handleGoBack = () => {
+    window.history.back();
   };
 
   if (inventory.length < 1) {
@@ -321,7 +327,7 @@ const EditInventory = () => {
           </div>
         </div>
         <div className="edit-inventory__buttons">
-          <Link className="link--cancel" to={`/inventories/${inventoryId}`}>
+          <Link className="link--cancel" onClick={handleGoBack}>
             <button className="button button--cancel">Cancel</button>
           </Link>
           <button className="button" type="submit">

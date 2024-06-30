@@ -3,9 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Search from "../../components/Search/Search";
 import "./Warehouses.scss";
-import Header from "../../components/Header/Header";
 import WarehousesList from "../../components/WarehouseList/WarehouseList";
-import Footer from "../../components/Footer/Footer";
 import Popup from "../../components/PopUp/PopUp";
 
 const Warehouses = () => {
@@ -71,7 +69,6 @@ const Warehouses = () => {
     <>
       <main className="main">
         <section className="warehouses__outerSec warehouses__outerSec--tablet">
-          <Header />
           <section className="warehouses">
             <div className="warehouses__title-bar">
               <h1 className="warehouses__heading">Warehouses</h1>
@@ -80,7 +77,7 @@ const Warehouses = () => {
                 className="button button--search"
                 onClick={() => handleAddClick()}
               >
-                + Add New Item
+                + Add New Warehouse
               </button>
             </div>
             <hr className="divider divider--hide-big" />
@@ -97,7 +94,6 @@ const Warehouses = () => {
               />
             )}
           </section>
-          <Footer />
         </section>
       </main>
     </>

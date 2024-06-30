@@ -192,6 +192,7 @@ a {
   color: $primary-color-3;
   border: none;
   cursor: pointer;
+  font-weight: 600;
 
   @include tablet {
     width: auto;

@@ -25,12 +25,17 @@
     top: 55%;
     right: 1rem;
     transform: translateY(-50%);
+
+    @include tablet {
+      top: 50%;
+    }
   }
 
   &__input {
     @include tablet {
       height: 2.375rem;
       width: 11.5625rem;
+      margin-top: 0 !important;
     }
 
     @include desktop {
