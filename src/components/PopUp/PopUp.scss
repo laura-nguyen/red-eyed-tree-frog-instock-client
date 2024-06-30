@@ -103,6 +103,7 @@
       border: 1px solid $secondary-color-2;
       border-radius: 1.25rem;
       height: 2.25rem;
+      cursor: pointer;
       @include tablet {
         width: 4.4375rem;
       }
@@ -114,8 +115,9 @@
       color: white;
       background-color: $supporting-color-2;
       border-radius: 1.25rem;
-      border: 1px solid $secondary-color-2;
+      border: none;
       height: 2.25rem;
+      cursor: pointer;
       @include tablet {
         width: 4.4375rem;
       }
