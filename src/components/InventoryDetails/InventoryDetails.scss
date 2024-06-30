@@ -12,14 +12,13 @@
     border-radius: 0.25rem;
 
     @include tablet {
-      margin: 2rem;
-      top: -7rem;
+      margin: 0 2rem;
+      top: -6rem;
     }
 
     @include desktop {
       max-width: 63.75rem;
       margin: auto;
-      top: -6rem;
     }
   }
 
@@ -31,7 +30,7 @@
     border-bottom: solid 0.0625rem $secondary-color-2;
 
     @include tablet {
-      padding: 2rem 2.5rem;
+      padding: 2rem 2rem 1.5rem 2rem;
     }
 
     &-icon {

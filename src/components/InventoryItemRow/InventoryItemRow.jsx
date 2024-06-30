@@ -13,29 +13,29 @@ const InventoryItemRow = ({ inventories, openModal }) => {
           <article className="inventory-list__item-wrapper">
             <div className="inventory-list__item">
               <div className="inventory-list__left">
-                <div className="cell">
-                  <h4 className="cell__heading">INVENTORY ITEM</h4>
+                <div className="td--item">
+                  <h4 className="td__heading">INVENTORY ITEM</h4>
                   <Link to={`/inventories/${inventory.id}`}>
-                    <div className="cell__link">
-                      <p className="cell__link-text p-medium">
+                    <div className="td__link">
+                      <p className="td__link-text p-medium">
                         {inventory.item_name}
                       </p>
                       <img
-                        className="cell__icon cell__icon--chevron"
+                        className="td__icon td__icon--chevron"
                         src={chevronIcon}
                         alt="View Inventory Icon"
                       />
                     </div>
                   </Link>
                 </div>
-                <div className="cell cell--category">
-                  <h4 className="cell__heading">CATEGORY</h4>
+                <div className="td td--category">
+                  <h4 className="td__heading">CATEGORY</h4>
                   <p className="p-medium">{inventory.category}</p>
                 </div>
               </div>
               <div className="inventory-list__right">
-                <div className="cell cell--status">
-                  <h4 className="cell__heading">STATUS</h4>
+                <div className="td td--status">
+                  <h4 className="td__heading">STATUS</h4>
                   <div
                     className={
                       inventory.status === "In Stock"
@@ -46,28 +46,30 @@ const InventoryItemRow = ({ inventories, openModal }) => {
                     {inventory.status}
                   </div>
                 </div>
-                <div className="cell cell--qty">
-                  <h4 className="cell__heading">QTY</h4>
+                <div className="td td--qty">
+                  <h4 className="td__heading">QTY</h4>
                   <p className="p-medium">{inventory.quantity}</p>
                 </div>
-                <div className="cell cell--warehouse">
-                  <h4 className="cell__heading">WAREHOUSE</h4>
+                <div className="td td--warehouse">
+                  <h4 className="td__heading">WAREHOUSE</h4>
                   <p className="p-medium">{inventory.warehouse_name}</p>
                 </div>
               </div>
             </div>
-            <div className="inventory-list__actions">
+            <div className="td--actions">
               <img
                 onClick={() => openModal(inventory.item_name, inventory.id)}
                 className="cell__icon"
                 src={deleteIcon}
                 alt="Delete Inventory Icon"
               />
-              <img
-                className="cell__icon"
-                src={editIcon}
-                alt="Edit Inventory Icon"
-              />
+              <Link to={`/inventories/edit/${inventory.id}`}>
+                <img
+                  className="cell__icon"
+                  src={editIcon}
+                  alt="Edit Inventory Icon"
+                />
+              </Link>
             </div>
           </article>
           <hr className="divider" />

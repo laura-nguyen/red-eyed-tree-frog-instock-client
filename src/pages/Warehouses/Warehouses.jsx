@@ -14,7 +14,6 @@ const Warehouses = () => {
   const [deleteWareHouseName, setDeleteWareHouseName] = useState("");
   const [deleteWareHouseId, setDeleteWareHouseId] = useState("");
   const navigate = useNavigate();
-  const deleteWarehouseEndPoint = `${API_URL}/warehouses/`;
   const [warehouseList, setWarehouse] = useState([]);
   const getWarehouseListEndPoint = `${API_URL}/warehouses`;
 
@@ -38,8 +37,6 @@ const Warehouses = () => {
   const DeleteWarehouse = async (e) => {
     e.preventDefault();
     try {
-      console.log(`${API_URL}/warehouses/${deleteWareHouseId}`);
-      console.log({ deleteWareHouseId });
       const result = await axios.delete(
         `${API_URL}/warehouses/${deleteWareHouseId}`
       );
@@ -95,7 +92,8 @@ const Warehouses = () => {
               <Popup
                 handleDelete={handleDelete}
                 closePopup={closePopup}
-                name={deleteWareHouseName}
+                question={`Delete ${deleteWareHouseName} warehouse?`}
+                description={`Please confirm that you'd like to delete ${deleteWareHouseName} from the list of warehouses. You won't be able to undo this action.`}
               />
             )}
           </section>

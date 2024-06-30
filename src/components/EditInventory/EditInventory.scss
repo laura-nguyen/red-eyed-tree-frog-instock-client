@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.add-inventory {
+.edit-inventory {
   position: relative;
   top: -3.75rem;
   margin: 0 1rem;
@@ -123,7 +123,6 @@
     -moz-appearance: none;
     background: transparent;
     background-image: none;
-    cursor: pointer;
   }
 
   &__radio-control {
