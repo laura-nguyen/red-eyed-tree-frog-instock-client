@@ -20,13 +20,13 @@
     @include tablet {
       display: flex;
       background-color: #f7f8f9b2;
-      padding: 0.5rem 1rem;
+      padding: 8px 1rem;
     }
 
     @include desktop {
       display: flex;
       background-color: #f7f8f9b2;
-      padding: 0.5rem 2rem;
+      padding: 8px 2rem;
     }
   }
 
@@ -55,13 +55,13 @@
   &__item {
     padding: 1rem 0;
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
 
     @include tablet {
       width: 100%;
       padding: 0;
       gap: 0;
-      flex: 5.5 !important;
+      flex: 4.5 !important;
     }
   }
 
@@ -69,13 +69,13 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    flex: 1;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
       width: 70%;
       gap: 0;
-      flex: 0.77 !important;
     }
   }
 
@@ -83,18 +83,18 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    flex: 1;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
       width: 50%;
       gap: 0;
-      flex: 1 !important;
     }
   }
 }
 
-.th-cell {
+.wh-th-cell {
   @include tablet {
     display: flex;
     flex: 1;
@@ -114,12 +114,6 @@
 
     @include tablet {
       font-size: 0.7125rem;
-    }
-  }
-
-  &--qty {
-    @include tablet {
-      flex: 0.5;
     }
   }
 
