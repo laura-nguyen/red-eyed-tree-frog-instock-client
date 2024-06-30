@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 
 import "./WarehouseItemRow.scss";
+const WarehouseItemRow = ({ warehouses, openModal, hidePopup }) => {
+  const navigate = useNavigate();
 
-const WarehouseItemRow = ({ warehouses }) => {
   return (
     <>
       {warehouses.map((warehouses) => (
@@ -52,6 +54,9 @@ const WarehouseItemRow = ({ warehouses }) => {
                 className="wh-td__icon"
                 src={deleteIcon}
                 alt="Delete warehouse icon"
+                onClick={() =>
+                  openModal(warehouses.warehouse_name, warehouses.id)
+                }
               />
               <Link
                 to={`/warehouses/edit/${warehouses.id}`}

@@ -16,7 +16,6 @@ import "./App.scss";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route path="/" element={<Warehouses />} />
         <Route path="/warehouses" element={<Warehouses />} />
@@ -42,7 +41,6 @@ function App() {
         />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
