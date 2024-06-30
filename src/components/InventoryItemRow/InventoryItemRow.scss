@@ -59,8 +59,7 @@
   &--qty {
     @include tablet {
       flex: 0.5;
-      padding: 0.5rem 0rem;
-      padding-left: 0.5rem;
+      padding: 0.5rem 0.8rem;
     }
   }
 
@@ -75,7 +74,6 @@
     @include tablet {
       flex: 1;
       padding: 0.5rem 0rem;
-      padding-left: 1.5rem;
     }
   }
 }
