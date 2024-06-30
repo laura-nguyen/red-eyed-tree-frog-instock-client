@@ -1,28 +1,8 @@
-import axios from "axios";
-
-import { useEffect, useState } from "react";
 import InventoryItemRow from "../InventoryItemRow/InventoryItemRow.jsx";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./InventoryList.scss";
 
-const InventoryList = () => {
-  const API_URL = import.meta.env.VITE_API_URL;
-
-  const [inventories, setInventories] = useState([]);
-
-  useEffect(() => {
-    const getAllInventories = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/inventories`);
-        setInventories(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getAllInventories();
-  }, []);
-
+const InventoryList = ({ openModal, inventories }) => {
   if (inventories.length === 0) {
     return <div className="loader">Loading...</div>;
   }
@@ -60,7 +40,7 @@ const InventoryList = () => {
           </div>
         ))}
       </article>
-      <InventoryItemRow inventories={inventories} />
+      <InventoryItemRow inventories={inventories} openModal={openModal} />
     </section>
   );
 };
