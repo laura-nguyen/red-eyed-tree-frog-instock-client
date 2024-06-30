@@ -64,15 +64,15 @@
 
   &--contact-info {
     @include tablet {
-      padding: 0.5rem 0.8rem;
-      flex: 0.7;
+      padding:  0.5rem 0rem 0.5rem 1rem;
+      flex: 0.8;
     }
   }
 
   &--contact-name {
     @include tablet {
       flex: 0.7;
-      padding: 0.5rem 0.8rem;
+      padding:  0.5rem 0rem 0.5rem 0.5rem;
     }
   }
 }
